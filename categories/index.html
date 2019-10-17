@@ -43,8 +43,8 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
       copy_button: '复制',
@@ -55,14 +55,17 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
+  <meta name="description" content="能力已经跟不上野心，学习。。。。#站点描述">
+<meta property="og:type" content="website">
 <meta property="og:title" content="分类">
 <meta property="og:url" content="https://qinghongzhang.github.io./categories/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="P.J小博客">
+<meta property="og:description" content="能力已经跟不上野心，学习。。。。#站点描述">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-10-14T06:22:48.854Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="分类">
+<meta name="twitter:description" content="能力已经跟不上野心，学习。。。。#站点描述">
   <link rel="canonical" href="https://qinghongzhang.github.io./categories/">
 
 
@@ -78,7 +81,7 @@
 </script>
 
   <title>
-      分类 | Hexo
+      分类 | P.J小博客
     
   </title>
   
@@ -126,10 +129,12 @@
     <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">P.J小博客</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+        <p class="site-subtitle">Stay Hungry, Stay Foolish</p>
+      
   </div>
 
   <div class="site-nav-toggle">
@@ -197,9 +202,36 @@
   </li>
       
     
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">
+          <i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+    
   </ul>
 
 </nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
 </div>
     </header>
 
@@ -318,7 +350,7 @@
       src="/images/avatar.gif"
       alt="qinghongzhang">
   <p class="site-author-name" itemprop="name">qinghongzhang</p>
-  <div class="site-description" itemprop="description"></div>
+  <div class="site-description" itemprop="description">能力已经跟不上野心，学习。。。。#站点描述</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -429,6 +461,9 @@
         
 
 
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=true&web_id=true"></script>
+  </div>
 
 
 
@@ -453,16 +488,34 @@
 
 <script src="/js/next-boot.js?v=7.4.1"></script>
 
-
-
+  <script defer src="/lib/three/three.min.js"></script>
+    
+    <script defer src="/lib/three/three-waves.min.js"></script>
+  
+    
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
   
 
 
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 
 
 
+
+
+
+  <script src="/js/local-search.js?v=7.4.1"></script>
 
 
 
