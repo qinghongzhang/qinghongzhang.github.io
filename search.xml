@@ -1,6 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Django部署时报错SQLite 3.8.3 or later is required (found 3.7.17)</title>
+    <url>/2019/11/03/Django%E9%83%A8%E7%BD%B2%E6%97%B6%E6%8A%A5%E9%94%99SQLite-3-8-3-or-later-is-required-found-3-7-17/</url>
+    <content><![CDATA[<p>问题：<br>昨天在腾讯云上部署自己的项目在执行 python manage.py runserver 时报错：<br><code>django.core.exceptions.ImproperlyConfigured: SQLite 3.8.3 or later is required (found 3.7.17).</code></p><h2 id="解决方法1"><a href="#解决方法1" class="headerlink" title="解决方法1"></a>解决方法1</h2><a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">卸载django:   pip uninstall django</span><br><span class="line">安装低版本：   pip install django==2.1.8</span><br></pre></td></tr></table></figure>
+
+<h2 id="解决方法2"><a href="#解决方法2" class="headerlink" title="解决方法2"></a>解决方法2</h2><p>1.查看系统的sqlite3的版本<br><code>sqlite3 --version</code><br>Centos系统自带的sqlite3版本偏低，在上面的错误提示中要求需要SQLite 3.8.3 or later，那么就需要去升级 SQlite 的版本了。<br>2.安装最新的sqlite3并设置更新python库版本</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">＃更新SQLite 3</span><br><span class="line">＃获取源代码（在主目录中运行）</span><br><span class="line">[root@djangoServer ~]# cd ~</span><br><span class="line">[root@djangoServer ~]# wget https://www.sqlite.org/2019/sqlite-autoconf-3270200.tar.gz</span><br><span class="line">[root@djangoServer ~]# tar -zxvf sqlite-autoconf-3270200.tar.gz</span><br><span class="line"> </span><br><span class="line">＃构建并安装</span><br><span class="line">[root@djangoServer ~]# cd sqlite-autoconf-3270200</span><br><span class="line">[root@djangoServer sqlite-autoconf-3270200]# ./configure --prefix=/usr/local</span><br><span class="line">[root@djangoServer sqlite-autoconf-3270200]# make &amp;&amp; make install</span><br><span class="line">[root@djangoServer sqlite-autoconf-3270200]# find /usr/ -name sqlite3</span><br><span class="line">/usr/bin/sqlite3</span><br><span class="line">/usr/lib64/python2.7/sqlite3</span><br><span class="line">/usr/local/bin/sqlite3</span><br><span class="line">/usr/local/python3/lib/python3.7/site-packages/django/db/backends/sqlite3</span><br><span class="line">/usr/local/python3/lib/python3.7/sqlite3</span><br><span class="line">[root@djangoServer sqlite-autoconf-3270200]# </span><br><span class="line"> </span><br><span class="line">＃不必要的文件，目录删除</span><br><span class="line">[root@djangoServer sqlite-autoconf-3270200]# cd ~</span><br><span class="line">[root@djangoServer ~]# ls</span><br><span class="line">anaconda-ks.cfg  sqlite-autoconf-3270200  sqlite-autoconf-3270200.tar.gz</span><br><span class="line">[root@djangoServer ~]# </span><br><span class="line">[root@djangoServer ~]# rm -rf sqlite-autoconf-3270200.tar.gz</span><br><span class="line">[root@djangoServer ~]# rm -rf sqlite-autoconf-3270200</span><br><span class="line"> </span><br><span class="line">＃检查版本</span><br><span class="line">## 最新安装的sqlite3版本</span><br><span class="line">[root@djangoServer ~]# /usr/local/bin/sqlite3 --version</span><br><span class="line">3.27.2 2019-02-25 16:06:06 bd49a8271d650fa89e446b42e513b595a717b9212c91dd384aab871fc1d0f6d7</span><br><span class="line">[root@djangoServer ~]# </span><br><span class="line"> </span><br><span class="line">## Centos7自带的sqlite3版本</span><br><span class="line">[root@djangoServer ~]# /usr/bin/sqlite3 --version</span><br><span class="line">3.7.17 2013-05-20 00:56:22 118a3b35693b134d56ebd780123b7fd6f1497668</span><br><span class="line">[root@djangoServer ~]# </span><br><span class="line"> </span><br><span class="line">## 可以看到sqlite3的版本还是旧版本，那么需要更新一下。</span><br><span class="line">[root@djangoServer ~]# sqlite3 --version</span><br><span class="line">3.7.17 2013-05-20 00:56:22 118a3b35693b134d56ebd780123b7fd6f1497668</span><br><span class="line">[root@djangoServer ~]# </span><br><span class="line"> </span><br><span class="line">## 更改旧的sqlite3</span><br><span class="line">[root@djangoServer ~]# mv /usr/bin/sqlite3  /usr/bin/sqlite3_old</span><br><span class="line"> </span><br><span class="line">## 软链接将新的sqlite3设置到/usr/bin目录下</span><br><span class="line">[root@djangoServer ~]# ln -s /usr/local/bin/sqlite3   /usr/bin/sqlite3</span><br><span class="line"> </span><br><span class="line">## 查看当前全局sqlite3的版本</span><br><span class="line">[root@djangoServer ~]# sqlite3 --version</span><br><span class="line">3.27.2 2019-02-25 16:06:06 bd49a8271d650fa89e446b42e513b595a717b9212c91dd384aab871fc1d0f6d7</span><br><span class="line">[root@djangoServer ~]# </span><br><span class="line"> </span><br><span class="line">＃将路径传递给共享库</span><br><span class="line"># 设置开机自启动执行，可以将下面的export语句写入 ~/.bashrc 文件中，如果如果你想立即生效，可以执行source 〜/.bashrc 将在每次启动终端时执行</span><br><span class="line">[root@djangoServer ~]# export LD_LIBRARY_PATH=&quot;/usr/local/lib&quot;</span><br><span class="line"> </span><br><span class="line">＃检查Python的SQLite3版本</span><br><span class="line">[root@djangoServer ~]# ipython3</span><br><span class="line">Python 3.7.1 (default, May  3 2019, 09:55:04) </span><br><span class="line">Type &apos;copyright&apos;, &apos;credits&apos; or &apos;license&apos; for more information</span><br><span class="line">IPython 7.5.0 -- An enhanced Interactive Python. Type &apos;?&apos; for help.</span><br><span class="line"> </span><br><span class="line">In [1]: import sqlite3                                                     </span><br><span class="line"> </span><br><span class="line">In [2]: sqlite3.sqlite_version                                             </span><br><span class="line">Out[2]: &apos;3.27.2&apos;</span><br><span class="line"> </span><br><span class="line">In [3]: exit                                                               </span><br><span class="line">[root@djangoServer ~]# </span><br><span class="line"> </span><br><span class="line">＃启动开发服务器</span><br><span class="line">[root@djangoServer ~]# cd /work/</span><br><span class="line">[root@djangoServer work]# ls</span><br><span class="line">db.sqlite3  manage.py  polls  test_django</span><br><span class="line">[root@djangoServer work]# python3 manage.py runserver</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><a href="https://blog.csdn.net/qq_39969226/article/details/92218635" target="_blank" rel="noopener">参考文章</a></p>
+]]></content>
+      <categories>
+        <category>部署</category>
+      </categories>
+      <tags>
+        <tag>服务器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2019/10/30/Django-sell/</url>
+    <content><![CDATA[<hr><p>title: Django  — sell<br>date: 2019-10-30 11:24:06<br>tags:</p><hr><h2 id="django–shell"><a href="#django–shell" class="headerlink" title="django–shell"></a>django–shell</h2><ol>
+<li>导入模型  </li>
+<li>开始操作  <ul>
+<li>models.objects.all()  —查询所有的模型</li>
+<li>object.last_updated_time   —-最新的修改日期<h3 id="分页器实现"><a href="#分页器实现" class="headerlink" title="分页器实现"></a>分页器实现</h3></li>
+</ul>
+</li>
+</ol><a id="more"></a>
+
+
+
+<ul>
+<li>from django.core.paginator import Paginator   —导入这个模块，具体是啥我也不知</li>
+<li>导入你的模型  from xx.models import xx</li>
+<li>object=xx.objects.all()   —-拿到所有你数据库中已有的模型</li>
+<li>paginator=Paginator(object,10)——object就是你刚刚拿到的模型，10代表10条一分页</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>Django评论登录</title>
+    <url>/2019/10/19/Django%E8%AF%84%E8%AE%BA%E7%99%BB%E5%BD%95/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>程序员必知资源</title>
     <url>/2019/10/18/%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%80%E5%B8%B8%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7/</url>
     <content><![CDATA[<h1 id="良心的博主"><a href="#良心的博主" class="headerlink" title="良心的博主"></a>良心的博主</h1><hr>

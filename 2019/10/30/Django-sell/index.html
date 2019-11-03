@@ -57,18 +57,18 @@
   };
 </script>
 
-  <meta name="description" content="能力已经跟不上野心，学习。。。。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="https://qinghongzhang.github.io./tags/index.html">
+  <meta name="description" content="title: Django  — selldate: 2019-10-30 11:24:06tags:django–shell 导入模型   开始操作   models.objects.all()  —查询所有的模型 object.last_updated_time   —-最新的修改日期分页器实现">
+<meta property="og:type" content="article">
+<meta property="og:title" content="P.J小博客">
+<meta property="og:url" content="https://qinghongzhang.github.io./2019/10/30/Django-sell/index.html">
 <meta property="og:site_name" content="P.J小博客">
-<meta property="og:description" content="能力已经跟不上野心，学习。。。。">
+<meta property="og:description" content="title: Django  — selldate: 2019-10-30 11:24:06tags:django–shell 导入模型   开始操作   models.objects.all()  —查询所有的模型 object.last_updated_time   —-最新的修改日期分页器实现">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-14T06:19:55.344Z">
+<meta property="og:updated_time" content="2019-10-30T04:14:24.215Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="标签">
-<meta name="twitter:description" content="能力已经跟不上野心，学习。。。。">
-  <link rel="canonical" href="https://qinghongzhang.github.io./tags/">
+<meta name="twitter:title" content="P.J小博客">
+<meta name="twitter:description" content="title: Django  — selldate: 2019-10-30 11:24:06tags:django–shell 导入模型   开始操作   models.objects.all()  —查询所有的模型 object.last_updated_time   —-最新的修改日期分页器实现">
+  <link rel="canonical" href="https://qinghongzhang.github.io./2019/10/30/Django-sell/">
 
 
 <script id="page-configurations">
@@ -76,16 +76,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
-    isPage: true,
+    isPost: true,
+    isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>
-      标签 | P.J小博客
-    
-  </title>
+  <title> | P.J小博客</title>
   
 
 
@@ -279,72 +276,146 @@
         <div class="content-wrap">
             
 
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-  
-
           <div class="content">
             
 
   <div class="posts-expand">
-    
-    
-    
-    <div class="post-block" lang="zh-CN">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://qinghongzhang.github.io./2019/10/30/Django-sell/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="山有木兮">
+      <meta itemprop="description" content="能力已经跟不上野心，学习。。。。">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="P.J小博客">
+    </span>
       <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            
+            
 
-<h2 class="post-title" itemprop="name headline">标签
-  
+          
+        </h2>
 
-</h2>
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
 
-<div class="post-meta">
-  
+              
+                
+              
 
+              <time title="创建时间：2019-10-30 11:24:06 / 修改时间：12:14:24" itemprop="dateCreated datePublished" datetime="2019-10-30T11:24:06+08:00">2019-10-30</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <hr><p>title: Django  — sell<br>date: 2019-10-30 11:24:06<br>tags:</p><hr><h2 id="django–shell"><a href="#django–shell" class="headerlink" title="django–shell"></a>django–shell</h2><ol>
+<li>导入模型  </li>
+<li>开始操作  <ul>
+<li>models.objects.all()  —查询所有的模型</li>
+<li>object.last_updated_time   —-最新的修改日期<h3 id="分页器实现"><a href="#分页器实现" class="headerlink" title="分页器实现"></a>分页器实现</h3></li>
+</ul>
+</li>
+</ol><a id="more"></a>
+
+
+
+<ul>
+<li>from django.core.paginator import Paginator   —导入这个模块，具体是啥我也不知</li>
+<li>导入你的模型  from xx.models import xx</li>
+<li>object=xx.objects.all()   —-拿到所有你数据库中已有的模型</li>
+<li>paginator=Paginator(object,10)——object就是你刚刚拿到的模型，10代表10条一分页</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+      
+
+        
+      
+        <div class="reward-container">
+  <div>创作不易，请多支持</div>
+  <button disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+        
+      
+      <div style="display: inline-block;">
+        <img src="/images/weixin.png" alt="山有木兮 微信支付">
+        <p>微信支付</p>
+      </div>
+        
+      
+      <div style="display: inline-block;">
+        <img src="/images/zhifubao.jpg" alt="山有木兮 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
 </div>
 
-</header>
+      
 
-      
-      
-      
-      <div class="post-body">
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-              目前共计 2 个标签
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/10/19/Django评论登录/" rel="next" title="Django评论登录">
+                  <i class="fa fa-chevron-left"></i> Django评论登录
+                </a>
+              
             </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/业余/" style="font-size: 12px; color: #ccc">业余</a> <a href="/tags/服务器/" style="font-size: 12px; color: #ccc">服务器</a>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/11/03/Django部署时报错SQLite-3-8-3-or-later-is-required-found-3-7-17/" rel="prev" title="Django部署时报错SQLite 3.8.3 or later is required (found 3.7.17)">
+                  Django部署时报错SQLite 3.8.3 or later is required (found 3.7.17) <i class="fa fa-chevron-right"></i>
+                </a>
+              
             </div>
           </div>
         
-      </div>
-      
-      
-      
-    </div>
+      </footer>
     
+  </article>
+  
+  
+  
 
-    
-    
-    
   </div>
 
 
@@ -379,6 +450,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#django–shell"><span class="nav-number">1.</span> <span class="nav-text">django–shell</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分页器实现"><span class="nav-number">1.1.</span> <span class="nav-text">分页器实现</span></a></li></ol></li></ol></div>
+        
       </div>
       <!--/noindex-->
 
