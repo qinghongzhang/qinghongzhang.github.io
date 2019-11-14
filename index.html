@@ -283,6 +283,137 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://qinghongzhang.github.io./2019/11/14/安装mysql/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="山有木兮">
+      <meta itemprop="description" content="能力已经跟不上野心，学习。。。。">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="P.J小博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            
+            <a href="/2019/11/14/安装mysql/" class="post-title-link" itemprop="url">安装mysql&数据迁移</a>
+          
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-11-14 22:30:00" itemprop="dateCreated datePublished" datetime="2019-11-14T22:30:00+08:00">2019-11-14</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-15 00:35:31" itemprop="dateModified" datetime="2019-11-15T00:35:31+08:00">2019-11-15</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Django/" itemprop="url" rel="index">
+                    <span itemprop="name">Django</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="本地安装MYSQL"><a href="#本地安装MYSQL" class="headerlink" title="本地安装MYSQL"></a>本地安装MYSQL</h2><ol>
+<li>打开<a href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener">官网</a>下载社区版本的mysql </li>
+<li>下载完后解压  </li>
+<li>解压后进入目录在含有bin,lib,run等这个目录下创建一个配置文件 my.ini  <pre><code>#my.ini 
+[mysqld]
+# 设置mysql的安装目录
+basedir=C:/mysql-8.0.11-winx64
+# 设置mysql数据库的数据的存放目录
+datadir=C:/mysql-8.0.11-winx64/data
+# 设置默认使用的端口
+port=3306
+# 允许最大连接数
+max_connections=200
+# 允许连接失败的次数。这是为了防止有人试图攻击数据库
+max_connect_errors=10
+# 服务端使用的字符集
+character-set-server=utf8mb4
+# 数据库字符集对应一些排序等规则使用的字符集
+collation-server=utf8mb4_general_ci
+# 创建新表时将使用的默认存储引擎
+default-storage-engine=INNODB
+# 默认使用“mysql_native_password”插件作为认证加密方式
+# MySQL8.0默认认证加密方式为caching_sha2_password
+default_authentication_plugin=mysql_native_password
+</code></pre></li>
+</ol>
+          <!--noindex-->
+          
+            <div class="post-button">
+              <a class="btn" href="/2019/11/14/安装mysql/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      
+
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://qinghongzhang.github.io./2019/11/11/在centos7里安装Python3-7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -861,7 +992,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -874,7 +1005,7 @@
             <a href="/categories/">
           
         
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span>
         </a>
       </div>
@@ -887,7 +1018,7 @@
             <a href="/tags/">
           
         
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
