@@ -283,6 +283,104 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://qinghongzhang.github.io./2019/11/11/在centos7里安装Python3-7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="山有木兮">
+      <meta itemprop="description" content="能力已经跟不上野心，学习。。。。">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="P.J小博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            
+            <a href="/2019/11/11/在centos7里安装Python3-7/" class="post-title-link" itemprop="url">在centos7里安装Python3.7</a>
+          
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-11-11 15:02:04 / 修改时间：15:55:50" itemprop="dateCreated datePublished" datetime="2019-11-11T15:02:04+08:00">2019-11-11</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>阿里云自带python2.7,这里我们需要安装python3.7,这里有我安装的一些步骤  </p><p>1.更新yum（个人习惯，可忽略）<br><code>yum update</code><br>2.切换到home目录（可以选择你喜欢的目录，不一定是home）<br><code>cd /home</code><br>3.下载python3.7.2的安装包到home目录；<br><code>wget https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tgz</code><br>4.解压<br><code>tar -xvzf Python-3.7.2.tgz</code><br>5.进入解压后的目录；<br><code>cd Python-3.7.2</code><br>6.安装依赖环境<br><code>yum -y install bzip2 bzip2-devel ncurses openssl openssl-devel openssl-static xz lzma xz-devel sqlite sqlite-devel gdbm gdbm-devel tk tk-devel libffi-devel</code><br>7.配置编译参数，把地址修改成/usr/local<br><code>./configure --prefix=/usr/local</code><br>8.编译以及安装  </p>
+          <!--noindex-->
+          
+            <div class="post-button">
+              <a class="btn" href="/2019/11/11/在centos7里安装Python3-7/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      
+
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://qinghongzhang.github.io./2019/11/03/Django部署时报错SQLite-3-8-3-or-later-is-required-found-3-7-17/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -763,7 +861,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -776,7 +874,7 @@
             <a href="/categories/">
           
         
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span>
         </a>
       </div>

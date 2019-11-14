@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>在centos7里安装Python3.7</title>
+    <url>/2019/11/11/%E5%9C%A8centos7%E9%87%8C%E5%AE%89%E8%A3%85Python3-7/</url>
+    <content><![CDATA[<p>阿里云自带python2.7,这里我们需要安装python3.7,这里有我安装的一些步骤  </p><p>1.更新yum（个人习惯，可忽略）<br><code>yum update</code><br>2.切换到home目录（可以选择你喜欢的目录，不一定是home）<br><code>cd /home</code><br>3.下载python3.7.2的安装包到home目录；<br><code>wget https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tgz</code><br>4.解压<br><code>tar -xvzf Python-3.7.2.tgz</code><br>5.进入解压后的目录；<br><code>cd Python-3.7.2</code><br>6.安装依赖环境<br><code>yum -y install bzip2 bzip2-devel ncurses openssl openssl-devel openssl-static xz lzma xz-devel sqlite sqlite-devel gdbm gdbm-devel tk tk-devel libffi-devel</code><br>7.配置编译参数，把地址修改成/usr/local<br><code>./configure --prefix=/usr/local</code><br>8.编译以及安装  </p><a id="more"></a>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#编译  </span><br><span class="line">make  </span><br><span class="line">#安装   </span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+
+<p>9.在/etc/ld.so.conf配置python库的路径；<br><code>vim /etc/ld.so.conf.d/python3.conf</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#添加以下内容：wq退出</span><br><span class="line">/usr/local/lib</span><br><span class="line">#python库的路径就是第6步配置的目录下的lib目录</span><br></pre></td></tr></table></figure>
+
+<p>10.将python3与pip3连接到/usr/bin；</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ln -s /usr/local/bin/python3 /usr/bin/python3</span><br><span class="line">ln -s /usr/local/bin/pip3 /usr/bin/pip3</span><br></pre></td></tr></table></figure>
+
+<p>11.安装完成，检查版本；</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">python3 --version</span><br><span class="line">pip3 --version</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>服务器</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Django部署时报错SQLite 3.8.3 or later is required (found 3.7.17)</title>
     <url>/2019/11/03/Django%E9%83%A8%E7%BD%B2%E6%97%B6%E6%8A%A5%E9%94%99SQLite-3-8-3-or-later-is-required-found-3-7-17/</url>
     <content><![CDATA[<p>问题：<br>昨天在腾讯云上部署自己的项目在执行 python manage.py runserver 时报错：<br><code>django.core.exceptions.ImproperlyConfigured: SQLite 3.8.3 or later is required (found 3.7.17).</code></p><h2 id="解决方法1"><a href="#解决方法1" class="headerlink" title="解决方法1"></a>解决方法1</h2><a id="more"></a>
