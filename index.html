@@ -324,7 +324,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-15 00:35:31" itemprop="dateModified" datetime="2019-11-15T00:35:31+08:00">2019-11-15</time>
+                <time title="修改时间：2019-11-15 00:40:20" itemprop="dateModified" datetime="2019-11-15T00:40:20+08:00">2019-11-15</time>
               </span>
             
           
@@ -381,7 +381,22 @@ default-storage-engine=INNODB
 # 默认使用“mysql_native_password”插件作为认证加密方式
 # MySQL8.0默认认证加密方式为caching_sha2_password
 default_authentication_plugin=mysql_native_password
-</code></pre></li>
+[mysql]
+# 设置mysql客户端默认字符集
+default-character-set=utf8mb4
+[client]
+default-character-set=utf8mb4
+port=3306 </code></pre></li>
+<li>之后进入bin目录在这个目录下打开cmd,初始化一下这个数据库  </li>
+<li>输入命令<code>mysqld --initialize-insecure --user=mysql --console</code> </li>
+<li>再安装mysql ,输入命令<code>mysqld --install        ps:如果是在powershell里用.\mysqld --install</code>  <ul>
+<li>如果出现<code>Install/Remove of the Service Denied!</code>,那就是因为你没有用管理员身份打开cmd，用管理员打开就行了  </li>
+</ul>
+</li>
+<li>打开服务 <code>net start mysql</code>,</li>
+<li>进入MySQL，<code>mysql -u root -p  ps:如果是在powershell里用./mysql -u root -p</code> 其中的root是我们刚刚初始化是自动创建的账号，没有密码 </li>
+<li>然后输入<code>alter user &#39;root&#39;@&#39;localhost&#39; identified by &#39;m48577&#39;;</code> 修改密码  </li>
+<li>输入<code>exit</code>退出MySQL，重复上面的第8步，登录进入数据库<br>至此安装MySQL安装成功 </li>
 </ol>
           <!--noindex-->
           
