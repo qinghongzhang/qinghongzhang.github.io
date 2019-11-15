@@ -283,6 +283,125 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://qinghongzhang.github.io./2019/11/15/重拾Python-简单爬虫-没用任何第三方库/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="山有木兮">
+      <meta itemprop="description" content="能力已经跟不上野心，学习。。。。">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="P.J小博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            
+            <a href="/2019/11/15/重拾Python-简单爬虫-没用任何第三方库/" class="post-title-link" itemprop="url">重拾Python --简单爬虫(没用任何第三方库)</a>
+          
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-11-15 23:41:52" itemprop="dateCreated datePublished" datetime="2019-11-15T23:41:52+08:00">2019-11-15</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-16 00:00:53" itemprop="dateModified" datetime="2019-11-16T00:00:53+08:00">2019-11-16</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>想想自己天天忙着整框架，随着程序设计大赛到来，去看了一眼以前买的Python二级题，发现好多不会做，Python语法掌握并不熟练，现在又回头重新温习，果然收获挺多。  </p><h3 id="要求从HTML文件里提取所有的图片的url"><a href="#要求从HTML文件里提取所有的图片的url" class="headerlink" title="要求从HTML文件里提取所有的图片的url"></a>要求从HTML文件里提取所有的图片的url</h3><ol>
+<li><code>http://www.ngchina.com.cn/photography/photo_of_the_day/6134.html</code>进入这个网站，把页面的源码复制保存到文件 b.html中 </li>
+<li>创建一个文件 a.txt来保存提取到的url  </li>
+<li>打开你的编辑器准备开工  </li>
+<li>主要学习这种<code>自顶向下</code>的编程思想，代码难度不大，这里直接贴代码  <ul>
+<li>我是先写的主函数，然后再写分支函数，这样逻辑很清楚<pre><code>def getHTMLlines(inputfile):
+f=open(inputfile,&apos;r&apos;,encoding=&apos;utf-8&apos;)
+ls=f.readlines()
+f.close()
+return ls
+</code></pre></li>
+</ul>
+</li>
+</ol>
+          <!--noindex-->
+          
+            <div class="post-button">
+              <a class="btn" href="/2019/11/15/重拾Python-简单爬虫-没用任何第三方库/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      
+
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://qinghongzhang.github.io./2019/11/14/安装mysql/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1007,7 +1126,7 @@ port=3306 </code></pre></li>
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1020,7 +1139,7 @@ port=3306 </code></pre></li>
             <a href="/categories/">
           
         
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span>
         </a>
       </div>
@@ -1033,7 +1152,7 @@ port=3306 </code></pre></li>
             <a href="/tags/">
           
         
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
