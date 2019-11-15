@@ -4,24 +4,42 @@
     <title>重拾Python --简单爬虫(没用任何第三方库)</title>
     <url>/2019/11/15/%E9%87%8D%E6%8B%BEPython-%E7%AE%80%E5%8D%95%E7%88%AC%E8%99%AB-%E6%B2%A1%E7%94%A8%E4%BB%BB%E4%BD%95%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/</url>
     <content><![CDATA[<p>想想自己天天忙着整框架，随着程序设计大赛到来，去看了一眼以前买的Python二级题，发现好多不会做，Python语法掌握并不熟练，现在又回头重新温习，果然收获挺多。  </p><h3 id="要求从HTML文件里提取所有的图片的url"><a href="#要求从HTML文件里提取所有的图片的url" class="headerlink" title="要求从HTML文件里提取所有的图片的url"></a>要求从HTML文件里提取所有的图片的url</h3><ol>
-<li><code>http://www.ngchina.com.cn/photography/photo_of_the_day/6134.html</code>进入这个网站，把页面的源码复制保存到文件 b.html中 </li>
-<li>创建一个文件 a.txt来保存提取到的url  </li>
-<li>打开你的编辑器准备开工  </li>
-<li>主要学习这种<code>自顶向下</code>的编程思想，代码难度不大，这里直接贴代码  <ul>
-<li>我是先写的主函数，然后再写分支函数，这样逻辑很清楚<pre><code>def getHTMLlines(inputfile):
+<li><p><code>http://www.ngchina.com.cn/photography/photo_of_the_day/6134.html</code>进入这个网站，把页面的源码复制保存到文件 b.html中 </p>
+</li>
+<li><p>创建一个文件 a.txt来保存提取到的url  </p>
+</li>
+<li><p>打开你的编辑器准备开工  </p>
+</li>
+<li><p>主要学习这种<code>自顶向下</code>的编程思想，代码难度不大，这里直接贴代码  </p>
+<ul>
+<li><p>我是先写的主函数，然后再写分支函数，这样逻辑很清楚</p>
+<pre><code>#逐行取出HTML
+def getHTMLlines(inputfile):
 f=open(inputfile,&apos;r&apos;,encoding=&apos;utf-8&apos;)
 ls=f.readlines()
 f.close()
 return ls
+# 把拿到的url存入列表
+def extractImageUrls(htmlLines):
+urls=[]
+for line in htmlLines:
+  if &apos;img&apos; in line:                                                                                                                                                                                                            
+      url=line.split(&apos;src=&apos;)[-1].split(&apos;&quot;&apos;)[1]                                                   
+
+      if &apos;http&apos; in url:
+          urls.append(url)
+return urls
+&apos;&apos;&apos;  
+img标签&lt;img title=&quot;photo story&quot; src=&quot;http://image.ngchina.com.cn/2019/1016/thumb_469_352_20191016034927613.jpg&quot; width=&quot;469px&quot; /&gt;
+把这一行先src=分成一个有两个元素的列表选中其中的最后一个元素（第二个），再以&quot;把src=&quot;http://image.ngchina.com.cn/2019/1016/thumb_469_352_20191016034927613.jpg&quot; width=&quot;469px&quot; /&gt;
+这一部分分开成一个有5个元素的列表，发现图片的url正好是第二个元素，所以是.split(&apos;&quot;&apos;)[1] 
+&apos;&apos;&apos;
 </code></pre></li>
 </ul>
 </li>
 </ol><a id="more"></a>
 
-<p>def extractImageUrls(htmlLines):<br>    urls=[]<br>    for line in htmlLines:<br>        if ‘img’ in line:    # img标签img title=”photo story” src=”<a href="http://image.ngchina.com.cn/2019/1016/thumb_469_352_20191016034927613.jpg&quot;" target="_blank" rel="noopener">http://image.ngchina.com.cn/2019/1016/thumb_469_352_20191016034927613.jpg&quot;</a> width=”469px” /&gt;<br>            url=line.split(‘src=’)[-1].split(‘“‘)[1]    #把这一行先src=分成一个有两个元素的列表选中其中的最后一个元素（第二个），再以”把src=”<a href="http://image.ngchina.com.cn/2019/1016/thumb_469_352_20191016034927613.jpg&quot;" target="_blank" rel="noopener">http://image.ngchina.com.cn/2019/1016/thumb_469_352_20191016034927613.jpg&quot;</a> width=”469px” /&gt;<br>                                                        #这一部分分开成一个有5个元素的列表，发现图片的url正好是第二个元素，所以是.split(‘“‘)[1]<br>            if ‘http’ in url:<br>                urls.append(url)<br>    return urls</p>
-<p>def showResults(imageUrls):<br>    count=0<br>    for url in imageUrls:<br>        print(‘第{:2}个URL:{}’.format(count,url))<br>        count+=1</p>
-<p>def saveResults(outputfile,imageUrls):<br>    f=open(outputfile,”w”)<br>    for url in imageUrls:<br>        f.write(url+’\n’)<br>    f.close()</p>
-<p>def main():<br>    inputfile=’b.html’<br>    outputfile=’a.txt’<br>    htmlLines=getHTMLlines(inputfile)<br>    imageUrls=extractImageUrls(htmlLines)<br>    showResults(imageUrls)<br>    saveResults(outputfile,imageUrls)<br>main()</p>
+<p>#打印出你得到的url 并且统计条数<br>def showResults(imageUrls):<br>    count=0<br>    for url in imageUrls:<br>        print(‘第{:2}个URL:{}’.format(count,url))<br>        count+=1<br>#保存到指定文件<br>def saveResults(outputfile,imageUrls):<br>    f=open(outputfile,”w”)<br>    for url in imageUrls:<br>        f.write(url+’\n’)<br>    f.close()<br>#主函数<br>def main():<br>    inputfile=’b.html’<br>    outputfile=’a.txt’<br>    htmlLines=getHTMLlines(inputfile)<br>    imageUrls=extractImageUrls(htmlLines)<br>    showResults(imageUrls)<br>    saveResults(outputfile,imageUrls)<br>main()</p>
 <p>```<br>睡觉</p>
 ]]></content>
       <categories>
