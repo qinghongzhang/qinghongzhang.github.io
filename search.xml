@@ -29,6 +29,7 @@
    <processes>4</processes> <!-- 进程数 -->     
    <daemonize>uwsgi.log</daemonize> <!-- 日志文件 -->
 </uwsgi>  
+
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">14. 安装nginx和配置nginx.conf文件</span><br></pre></td></tr></table></figure>
 
 <p>wget <a href="http://nginx.org/download/nginx-1.16.1.tar.gz" target="_blank" rel="noopener">http://nginx.org/download/nginx-1.16.1.tar.gz</a>  #下载包<br>tar xvf nginx-1.16.1.tar.gz  #解压  </p>
