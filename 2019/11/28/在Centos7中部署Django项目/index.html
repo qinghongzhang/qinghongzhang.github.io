@@ -57,19 +57,18 @@
   };
 </script>
 
-  <meta name="description" content="想想自己天天忙着整框架，随着程序设计大赛到来，去看了一眼以前买的Python二级题，发现好多不会做，Python语法掌握并不熟练，现在又回头重新温习，果然收获挺多。">
-<meta name="keywords" content="爬虫">
+  <meta name="description" content="这次部署真的爽，一步到位，哈哈哈 首先你你得去安装python,去看看我的这篇博客吧，骚年！  还是建议大家在虚拟环境里操作的   12345pip3 install virtualenv  #下载虚拟环境包ln -s /usr/local/python3/bin/virtualenv /usr/bin/virtualenv  #建立软连接``` 3. 安装成功在根目录下建立两个文件夹，主要用于存">
 <meta property="og:type" content="article">
-<meta property="og:title" content="重拾Python --简单爬虫(没用任何第三方库)">
-<meta property="og:url" content="https://qinghongzhang.github.io./2019/11/15/重拾Python-简单爬虫-没用任何第三方库/index.html">
+<meta property="og:title" content="在Centos7中部署Django项目">
+<meta property="og:url" content="https://qinghongzhang.github.io./2019/11/28/在Centos7中部署Django项目/index.html">
 <meta property="og:site_name" content="P.J小博客">
-<meta property="og:description" content="想想自己天天忙着整框架，随着程序设计大赛到来，去看了一眼以前买的Python二级题，发现好多不会做，Python语法掌握并不熟练，现在又回头重新温习，果然收获挺多。">
+<meta property="og:description" content="这次部署真的爽，一步到位，哈哈哈 首先你你得去安装python,去看看我的这篇博客吧，骚年！  还是建议大家在虚拟环境里操作的   12345pip3 install virtualenv  #下载虚拟环境包ln -s /usr/local/python3/bin/virtualenv /usr/bin/virtualenv  #建立软连接``` 3. 安装成功在根目录下建立两个文件夹，主要用于存">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-15T16:23:06.562Z">
+<meta property="og:updated_time" content="2019-11-27T17:08:31.395Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="重拾Python --简单爬虫(没用任何第三方库)">
-<meta name="twitter:description" content="想想自己天天忙着整框架，随着程序设计大赛到来，去看了一眼以前买的Python二级题，发现好多不会做，Python语法掌握并不熟练，现在又回头重新温习，果然收获挺多。">
-  <link rel="canonical" href="https://qinghongzhang.github.io./2019/11/15/重拾Python-简单爬虫-没用任何第三方库/">
+<meta name="twitter:title" content="在Centos7中部署Django项目">
+<meta name="twitter:description" content="这次部署真的爽，一步到位，哈哈哈 首先你你得去安装python,去看看我的这篇博客吧，骚年！  还是建议大家在虚拟环境里操作的   12345pip3 install virtualenv  #下载虚拟环境包ln -s /usr/local/python3/bin/virtualenv /usr/bin/virtualenv  #建立软连接``` 3. 安装成功在根目录下建立两个文件夹，主要用于存">
+  <link rel="canonical" href="https://qinghongzhang.github.io./2019/11/28/在Centos7中部署Django项目/">
 
 
 <script id="page-configurations">
@@ -83,7 +82,7 @@
   };
 </script>
 
-  <title>重拾Python --简单爬虫(没用任何第三方库) | P.J小博客</title>
+  <title>在Centos7中部署Django项目 | P.J小博客</title>
   
 
 
@@ -285,7 +284,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://qinghongzhang.github.io./2019/11/15/重拾Python-简单爬虫-没用任何第三方库/">
+    <link itemprop="mainEntityOfPage" href="https://qinghongzhang.github.io./2019/11/28/在Centos7中部署Django项目/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="山有木兮">
@@ -299,7 +298,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            重拾Python --简单爬虫(没用任何第三方库)
+            在Centos7中部署Django项目
             
 
           
@@ -316,37 +315,12 @@
                 
               
 
-              <time title="创建时间：2019-11-15 23:41:52" itemprop="dateCreated datePublished" datetime="2019-11-15T23:41:52+08:00">2019-11-15</time>
+              <time title="创建时间：2019-11-28 00:19:13 / 修改时间：01:08:31" itemprop="dateCreated datePublished" datetime="2019-11-28T00:19:13+08:00">2019-11-28</time>
             </span>
           
             
 
             
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-16 00:23:06" itemprop="dateModified" datetime="2019-11-16T00:23:06+08:00">2019-11-16</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -360,57 +334,57 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>想想自己天天忙着整框架，随着程序设计大赛到来，去看了一眼以前买的Python二级题，发现好多不会做，Python语法掌握并不熟练，现在又回头重新温习，果然收获挺多。  </p><a id="more"></a>
-<h3 id="要求从HTML文件里提取所有的图片的url"><a href="#要求从HTML文件里提取所有的图片的url" class="headerlink" title="要求从HTML文件里提取所有的图片的url"></a>要求从HTML文件里提取所有的图片的url</h3><ol>
-<li><code>http://www.ngchina.com.cn/photography/photo_of_the_day/6134.html</code>进入这个网站，把页面的源码复制保存到文件 b.html中 </li>
-<li>创建一个文件 a.txt来保存提取到的url  </li>
-<li>打开你的编辑器准备开工  </li>
-<li>主要学习这种<code>自顶向下</code>的编程思想，代码难度不大，这里直接贴代码  <ul>
-<li>我是先写的主函数，然后再写分支函数，这样逻辑很清楚<pre><code>#逐行取出HTML
-def getHTMLlines(inputfile):
-f=open(inputfile,&apos;r&apos;,encoding=&apos;utf-8&apos;)
-ls=f.readlines()
-f.close()
-return ls
-# 把拿到的url存入列表
-def extractImageUrls(htmlLines):
-urls=[]
-for line in htmlLines:
-  if &apos;img&apos; in line:
-      url=line.split(&apos;src=&apos;)[-1].split(&apos;&quot;&apos;)[1]                                                                 
-      if &apos;http&apos; in url:
-          urls.append(url)
-return urls
-&apos;&apos;&apos;  
-img标签&lt;img title=&quot;photo story&quot; src=&quot;http://image.ngchina.com.cn/2019/1016/thumb_469_352_20191016034927613.jpg&quot; width=&quot;469px&quot; /&gt;
-把这一行先src=分成一个有两个元素的列表选中其中的最后一个元素（第二个），再以&quot;把src=&quot;http://image.ngchina.com.cn/2019/1016/thumb_469_352_20191016034927613.jpg&quot; width=&quot;469px&quot; /&gt;
-这一部分分开成一个有5个元素的列表，发现图片的url正好是第二个元素，所以是.split(&apos;&quot;&apos;)[1] 
-&apos;&apos;&apos;
-#打印出你得到的url 并且统计条数
-def showResults(imageUrls):
-count=0
-for url in imageUrls:
-  print(&apos;第{:2}个URL:{}&apos;.format(count,url))
-  count+=1
-#保存到指定文件
-def saveResults(outputfile,imageUrls):
-f=open(outputfile,&quot;w&quot;)
-for url in imageUrls:
-  f.write(url+&apos;\n&apos;)
-f.close()
-#主函数
-def main():
-inputfile=&apos;b.html&apos;
-outputfile=&apos;a.txt&apos;
-htmlLines=getHTMLlines(inputfile)
-imageUrls=extractImageUrls(htmlLines)
-showResults(imageUrls)
-saveResults(outputfile,imageUrls)
-main()</code></pre>睡觉</li>
-</ul>
-</li>
-</ol>
+        <h1 id="这次部署真的爽，一步到位，哈哈哈"><a href="#这次部署真的爽，一步到位，哈哈哈" class="headerlink" title="这次部署真的爽，一步到位，哈哈哈"></a>这次部署真的爽，一步到位，哈哈哈</h1><hr><ol>
+<li>首先你你得去<a href="https://qinghongzhang.github.io/2019/11/11/%E5%9C%A8centos7%E9%87%8C%E5%AE%89%E8%A3%85Python3-7/" target="_blank" rel="noopener">安装python</a>,去看看我的这篇博客吧，骚年！ </li>
+<li>还是建议大家在虚拟环境里操作的   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">pip3 install virtualenv  #下载虚拟环境包</span><br><span class="line">ln -s /usr/local/python3/bin/virtualenv /usr/bin/virtualenv  #建立软连接</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">3. 安装成功在根目录下建立两个文件夹，主要用于存放env和网站文件的。(个人习惯，其它人可根据自己的实际情况处理)</span><br></pre></td></tr></table></figure>
 
+</li>
+</ol><a id="more"></a>
+
+<p>mkdir -p /data/env<br>mkdir -p /data/wwwroot</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">4. 切换到/data/env/下，创建指定版本的虚拟环境  </span><br><span class="line">`virtualenv --python=/usr/bin/python3 pyweb #pyweb自己可以命名`</span><br><span class="line">5. 启动虚拟环境  </span><br><span class="line">`/usr/local/nginx/sbin/./nginx`    </span><br><span class="line">6. 虚拟环境里安装django和uwsgi</span><br></pre></td></tr></table></figure>
+
+<p>pip3 install django （如果用于生产的话，则需要指定安装和你项目相同的版本）<br>pip3 install uwsgi</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">**留意：uwsgi要安装两次，先在系统里安装一次，然后进入对应的虚拟环境安装一次。退出虚拟环境的命令是 deactivate**  </span><br><span class="line">7. 现在回到你的本地进入你要上传项目的根目录  </span><br><span class="line">`pip freeze &gt; requirements.txt  #在本地终端执行导出依赖包`  </span><br><span class="line">再把项目压缩打包，上传到服务器对应的目录解压</span><br><span class="line"></span><br><span class="line">8. 把你的项目上传到服务器</span><br></pre></td></tr></table></figure>
+
+<p>yum install lrzsz  #下载上传工具<br>rz   #执行之后等一会，再选择你要上传的文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">9. 解压压缩包  </span><br><span class="line">如果是 .zip压缩包</span><br></pre></td></tr></table></figure>
+
+<p>yum install unzip<br>unzip 你的项目.zip</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">这样就解压成功  </span><br><span class="line">如果是 .tar或.tgz </span><br><span class="line">`tar -zxvf 你的项目.tar/tgz`  </span><br><span class="line">10. 再创建一个虚拟环境(请看前面第四步)  </span><br><span class="line">11. 进入虚拟环境后 再进入项目路径（你项目的根目录）</span><br><span class="line">`pip3 install -r requirements.txt  #安装依赖包`  </span><br><span class="line">12. 查看项目在服务器上是否运行成功  </span><br><span class="line">`python3 manage.py runserver`不成功就检查一下代码写对没，或者前面的步骤是不是对的  </span><br><span class="line">13. 开始配置uwsgi   </span><br><span class="line">我们网站项目路径是 /data/wwwroot/mysite/,在项目根目录下创建</span><br><span class="line">mysite.xml文件，输入如下内容：</span><br></pre></td></tr></table></figure>
+
+<uwsgi>    
+   <socket>127.0.0.1:8997</socket> <!-- 内部端口，自定义 --> 
+   <chdir>/data/wwwroot/mysite/</chdir> <!-- 项目路径 -->            
+   <module>mysite.wsgi</module>  <!-- mysite为wsgi.py所在目录名--> 
+   <processes>4</processes> <!-- 进程数 -->     
+   <daemonize>uwsgi.log</daemonize> <!-- 日志文件 -->
+</uwsgi>  
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">14. 安装nginx和配置nginx.conf文件</span><br></pre></td></tr></table></figure>
+
+<p>wget <a href="http://nginx.org/download/nginx-1.16.1.tar.gz" target="_blank" rel="noopener">http://nginx.org/download/nginx-1.16.1.tar.gz</a>  #下载包<br>tar xvf nginx-1.16.1.tar.gz  #解压  </p>
+<h1 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h1><p>./configure<br>make<br>make install  </p>
+<h1 id="设置开机自启"><a href="#设置开机自启" class="headerlink" title="设置开机自启"></a>设置开机自启</h1><p>tail -1 /etc/rc.d/rc.local</p>
+<h1 id="建立软链"><a href="#建立软链" class="headerlink" title="建立软链"></a>建立软链</h1><p>ln -s /usr/local//nginx/sbin/nginx /usr/bin/nginx</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">nginx一般默认安装好的路径为/usr/local/nginx</span><br><span class="line">在/usr/local/nginx/conf/中先备份一下nginx.conf文件，以防意外。  </span><br><span class="line">`cp nginx.conf nginx.conf.bak`  </span><br><span class="line">然后打开nginx.conf，把原来的内容删除，直接加入以下内容：(:%d 删除全部)</span><br></pre></td></tr></table></figure>
+
+<p>events {<br>    worker_connections  1024;<br>}<br>http {<br>    include       mime.types;<br>    default_type  application/octet-stream;<br>    sendfile        on;<br>    server {<br>        listen 80;<br>        server_name  <a href="http://www.django.cn" target="_blank" rel="noopener">www.django.cn</a>; #改为自己的域名，没域名修改为127.0.0.1:80<br>        charset utf-8;<br>        location / {<br>           include uwsgi_params;<br>           uwsgi_pass 127.0.0.1:8997;  #端口要和uwsgi里配置的一样<br>           uwsgi_param UWSGI_SCRIPT mysite.wsgi;  #wsgi.py所在的目录名+.wsgi<br>           uwsgi_param UWSGI_CHDIR /data/wwwroot/mysite/; #项目路径</p>
+<pre><code>    }
+    location /static/ {
+    alias /data/wwwroot/mysite/static/; #静态资源路径
+    }
+}</code></pre><p>} </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">要留意备注的地方，要和UWSGI配置文件mysite.xml，还有项目路径对应上。</span><br><span class="line">进入/usr/local/nginx/sbin/目录</span><br><span class="line">执行./nginx -t命令先检查配置文件是否有错，没有错就执行以下命令： </span><br><span class="line">`/usr/local/nginx/sbin/./nginx    #启动nginx`  </span><br><span class="line">终端没有任何提示就证明nginx启动成功。可以使用你的服务器地址查看，成功之后就会看到一个nginx欢迎页面。   </span><br><span class="line">15. 回到项目  </span><br><span class="line">在settings.py里设置：</span><br><span class="line"></span><br><span class="line">1、关闭DEBUG模式。</span><br><span class="line"></span><br><span class="line">DEBUG = False </span><br><span class="line"></span><br><span class="line">2、ALLOWED_HOSTS设置为* 表示任何IP都可以访问网站。</span><br><span class="line"></span><br><span class="line">ALLOWED_HOSTS = [&apos;*&apos;]  </span><br><span class="line">16. 进入网站项目目录  </span><br><span class="line">`uwsgi -x mysite.xml`  </span><br><span class="line">17. 以上没出问题的话  </span><br><span class="line">`/usr/local/nginx/sbin/./nginx -s reload  #重启nginx`   </span><br><span class="line">此时在浏览器应该能够访问到你的项目了    </span><br><span class="line"></span><br><span class="line">------ </span><br><span class="line"># 线上部署admin后台样式没有生效的问题  </span><br><span class="line"> 1. 在setting尾部：</span><br></pre></td></tr></table></figure>
+
+<p> STATIC_ROOT  = os.path.join(BASE_DIR, ‘static’)#指定样式收集目录<br>#或<br>STATIC_ROOT = ‘/www/mysite/mysite/static’  #指定样式收集目录</p>
+<pre><code>2. 收集CSS样式，在终端输入：
+`python manage.py collectstatic`  
+运行这个命令之后，就会自动把后台CSS样式收集到/static/目录下。刷新页面就能恢复样式！
+
+[参考文章](https://www.django.cn/article/show-4.html#banqian)
+
+
+</code></pre>
     </div>
 
     
@@ -445,23 +419,14 @@ main()</code></pre>睡觉</li>
       
 
       <footer class="post-footer">
-          
-            
-          
-          <div class="post-tags">
-            
-              <a href="/tags/爬虫/" rel="tag"># 爬虫</a>
-            
-          </div>
-        
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/11/14/安装mysql/" rel="next" title="安装mysql&数据迁移">
-                  <i class="fa fa-chevron-left"></i> 安装mysql&数据迁移
+                <a href="/2019/11/15/重拾Python-简单爬虫-没用任何第三方库/" rel="next" title="重拾Python --简单爬虫(没用任何第三方库)">
+                  <i class="fa fa-chevron-left"></i> 重拾Python --简单爬虫(没用任何第三方库)
                 </a>
               
             </div>
@@ -469,10 +434,6 @@ main()</code></pre>睡觉</li>
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2019/11/28/在Centos7中部署Django项目/" rel="prev" title="在Centos7中部署Django项目">
-                  在Centos7中部署Django项目 <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
@@ -518,7 +479,7 @@ main()</code></pre>睡觉</li>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#要求从HTML文件里提取所有的图片的url"><span class="nav-number">1.</span> <span class="nav-text">要求从HTML文件里提取所有的图片的url</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#这次部署真的爽，一步到位，哈哈哈"><span class="nav-number">1.</span> <span class="nav-text">这次部署真的爽，一步到位，哈哈哈</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#编译安装"><span class="nav-number">2.</span> <span class="nav-text">编译安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置开机自启"><span class="nav-number">3.</span> <span class="nav-text">设置开机自启</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#建立软链"><span class="nav-number">4.</span> <span class="nav-text">建立软链</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->
