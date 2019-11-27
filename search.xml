@@ -5,22 +5,22 @@
     <url>/2019/11/28/%E5%9C%A8Centos7%E4%B8%AD%E9%83%A8%E7%BD%B2Django%E9%A1%B9%E7%9B%AE/</url>
     <content><![CDATA[<h1 id="这次部署真的爽，一步到位，哈哈哈"><a href="#这次部署真的爽，一步到位，哈哈哈" class="headerlink" title="这次部署真的爽，一步到位，哈哈哈"></a>这次部署真的爽，一步到位，哈哈哈</h1><hr><ol>
 <li>首先你你得去<a href="https://qinghongzhang.github.io/2019/11/11/%E5%9C%A8centos7%E9%87%8C%E5%AE%89%E8%A3%85Python3-7/" target="_blank" rel="noopener">安装python</a>,去看看我的这篇博客吧，骚年！ </li>
-<li>还是建议大家在虚拟环境里操作的   <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pip3 install virtualenv  #下载虚拟环境包</span><br><span class="line">ln -s /usr/local/python3/bin/virtualenv /usr/bin/virtualenv  #建立软连接</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">3. 安装成功在根目录下建立两个文件夹，主要用于存放env和网站文件的。(个人习惯，其它人可根据自己的实际情况处理)</span><br></pre></td></tr></table></figure>
-
-</li>
+<li>还是建议大家在虚拟环境里操作的  </li>
 </ol><a id="more"></a>
 
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pip3 install virtualenv  #下载虚拟环境包</span><br><span class="line">ln -s /usr/local/python3/bin/virtualenv /usr/bin/virtualenv  #建立软连接</span><br><span class="line"></span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">3. 安装成功在根目录下建立两个文件夹，主要用于存放env和网站文件的。(个人习惯，其它人可根据自己的实际情况处理)</span><br></pre></td></tr></table></figure>
+
 <p>mkdir -p /data/env<br>mkdir -p /data/wwwroot</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">4. 切换到/data/env/下，创建指定版本的虚拟环境  </span><br><span class="line">`virtualenv --python=/usr/bin/python3 pyweb #pyweb自己可以命名`</span><br><span class="line">5. 启动虚拟环境  </span><br><span class="line">`/usr/local/nginx/sbin/./nginx`    </span><br><span class="line">6. 虚拟环境里安装django和uwsgi</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">4. 切换到/data/env/下，创建指定版本的虚拟环境    </span><br><span class="line"></span><br><span class="line">`virtualenv --python=/usr/bin/python3 pyweb #pyweb自己可以命名`  </span><br><span class="line"></span><br><span class="line">5. 启动虚拟环境    </span><br><span class="line"></span><br><span class="line">`/usr/local/nginx/sbin/./nginx`   </span><br><span class="line"></span><br><span class="line">6. 虚拟环境里安装django和uwsgi</span><br></pre></td></tr></table></figure>
 
 <p>pip3 install django （如果用于生产的话，则需要指定安装和你项目相同的版本）<br>pip3 install uwsgi</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">**留意：uwsgi要安装两次，先在系统里安装一次，然后进入对应的虚拟环境安装一次。退出虚拟环境的命令是 deactivate**  </span><br><span class="line">7. 现在回到你的本地进入你要上传项目的根目录  </span><br><span class="line">`pip freeze &gt; requirements.txt  #在本地终端执行导出依赖包`  </span><br><span class="line">再把项目压缩打包，上传到服务器对应的目录解压</span><br><span class="line"></span><br><span class="line">8. 把你的项目上传到服务器</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">**留意：uwsgi要安装两次，先在系统里安装一次，然后进入对应的虚拟环境安装一次。退出虚拟环境的命令是 deactivate**    </span><br><span class="line"></span><br><span class="line">7. 现在回到你的本地进入你要上传项目的根目录    </span><br><span class="line"></span><br><span class="line">`pip freeze &gt; requirements.txt  #在本地终端执行导出依赖包`    </span><br><span class="line"></span><br><span class="line">再把项目压缩打包，上传到服务器对应的目录解压  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">8. 把你的项目上传到服务器</span><br></pre></td></tr></table></figure>
 
 <p>yum install lrzsz  #下载上传工具<br>rz   #执行之后等一会，再选择你要上传的文件</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">9. 解压压缩包  </span><br><span class="line">如果是 .zip压缩包</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">9. 解压压缩包    </span><br><span class="line"></span><br><span class="line">如果是 .zip压缩包</span><br></pre></td></tr></table></figure>
 
 <p>yum install unzip<br>unzip 你的项目.zip</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">这样就解压成功  </span><br><span class="line">如果是 .tar或.tgz </span><br><span class="line">`tar -zxvf 你的项目.tar/tgz`  </span><br><span class="line">10. 再创建一个虚拟环境(请看前面第四步)  </span><br><span class="line">11. 进入虚拟环境后 再进入项目路径（你项目的根目录）</span><br><span class="line">`pip3 install -r requirements.txt  #安装依赖包`  </span><br><span class="line">12. 查看项目在服务器上是否运行成功  </span><br><span class="line">`python3 manage.py runserver`不成功就检查一下代码写对没，或者前面的步骤是不是对的  </span><br><span class="line">13. 开始配置uwsgi   </span><br><span class="line">我们网站项目路径是 /data/wwwroot/mysite/,在项目根目录下创建</span><br><span class="line">mysite.xml文件，输入如下内容：</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">这样就解压成功    </span><br><span class="line"></span><br><span class="line">如果是 .tar或.tgz   </span><br><span class="line"></span><br><span class="line">`tar -zxvf 你的项目.tar/tgz`    </span><br><span class="line"></span><br><span class="line">10. 再创建一个虚拟环境(请看前面第四步)   </span><br><span class="line"></span><br><span class="line">11. 进入虚拟环境后 再进入项目路径（你项目的根目录）  </span><br><span class="line"></span><br><span class="line">`pip3 install -r requirements.txt  #安装依赖包`    </span><br><span class="line"></span><br><span class="line">12. 查看项目在服务器上是否运行成功   </span><br><span class="line"></span><br><span class="line">`python3 manage.py runserver`不成功就检查一下代码写对没，或者前面的步骤是不是对的    </span><br><span class="line"></span><br><span class="line">13. 开始配置uwsgi     </span><br><span class="line"></span><br><span class="line">我们网站项目路径是 /data/wwwroot/mysite/,在项目根目录下创建   </span><br><span class="line"></span><br><span class="line">mysite.xml文件，输入如下内容：</span><br></pre></td></tr></table></figure>
 
 <uwsgi>    
    <socket>127.0.0.1:8997</socket> <!-- 内部端口，自定义 --> 
@@ -36,7 +36,7 @@
 <h1 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h1><p>./configure<br>make<br>make install  </p>
 <h1 id="设置开机自启"><a href="#设置开机自启" class="headerlink" title="设置开机自启"></a>设置开机自启</h1><p>tail -1 /etc/rc.d/rc.local</p>
 <h1 id="建立软链"><a href="#建立软链" class="headerlink" title="建立软链"></a>建立软链</h1><p>ln -s /usr/local//nginx/sbin/nginx /usr/bin/nginx</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nginx一般默认安装好的路径为/usr/local/nginx</span><br><span class="line">在/usr/local/nginx/conf/中先备份一下nginx.conf文件，以防意外。  </span><br><span class="line">`cp nginx.conf nginx.conf.bak`  </span><br><span class="line">然后打开nginx.conf，把原来的内容删除，直接加入以下内容：(:%d 删除全部)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">nginx一般默认安装好的路径为/usr/local/nginx   </span><br><span class="line"></span><br><span class="line">在/usr/local/nginx/conf/中先备份一下nginx.conf文件，以防意外。   </span><br><span class="line"></span><br><span class="line">`cp nginx.conf nginx.conf.bak`    </span><br><span class="line"></span><br><span class="line">然后打开nginx.conf，把原来的内容删除，直接加入以下内容：(:%d 删除全部)</span><br></pre></td></tr></table></figure>
 
 <p>events {<br>    worker_connections  1024;<br>}<br>http {<br>    include       mime.types;<br>    default_type  application/octet-stream;<br>    sendfile        on;<br>    server {<br>        listen 80;<br>        server_name  <a href="http://www.django.cn" target="_blank" rel="noopener">www.django.cn</a>; #改为自己的域名，没域名修改为127.0.0.1:80<br>        charset utf-8;<br>        location / {<br>           include uwsgi_params;<br>           uwsgi_pass 127.0.0.1:8997;  #端口要和uwsgi里配置的一样<br>           uwsgi_param UWSGI_SCRIPT mysite.wsgi;  #wsgi.py所在的目录名+.wsgi<br>           uwsgi_param UWSGI_CHDIR /data/wwwroot/mysite/; #项目路径</p>
 <pre><code>    }
@@ -44,11 +44,14 @@
     alias /data/wwwroot/mysite/static/; #静态资源路径
     }
 }</code></pre><p>} </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">要留意备注的地方，要和UWSGI配置文件mysite.xml，还有项目路径对应上。</span><br><span class="line">进入/usr/local/nginx/sbin/目录</span><br><span class="line">执行./nginx -t命令先检查配置文件是否有错，没有错就执行以下命令： </span><br><span class="line">`/usr/local/nginx/sbin/./nginx    #启动nginx`  </span><br><span class="line">终端没有任何提示就证明nginx启动成功。可以使用你的服务器地址查看，成功之后就会看到一个nginx欢迎页面。   </span><br><span class="line">15. 回到项目  </span><br><span class="line">在settings.py里设置：</span><br><span class="line"></span><br><span class="line">1、关闭DEBUG模式。</span><br><span class="line"></span><br><span class="line">DEBUG = False </span><br><span class="line"></span><br><span class="line">2、ALLOWED_HOSTS设置为* 表示任何IP都可以访问网站。</span><br><span class="line"></span><br><span class="line">ALLOWED_HOSTS = [&apos;*&apos;]  </span><br><span class="line">16. 进入网站项目目录  </span><br><span class="line">`uwsgi -x mysite.xml`  </span><br><span class="line">17. 以上没出问题的话  </span><br><span class="line">`/usr/local/nginx/sbin/./nginx -s reload  #重启nginx`   </span><br><span class="line">此时在浏览器应该能够访问到你的项目了    </span><br><span class="line"></span><br><span class="line">------ </span><br><span class="line"># 线上部署admin后台样式没有生效的问题  </span><br><span class="line"> 1. 在setting尾部：</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">要留意备注的地方，要和UWSGI配置文件mysite.xml，还有项目路径对应上。  </span><br><span class="line"></span><br><span class="line">进入/usr/local/nginx/sbin/目录   </span><br><span class="line"></span><br><span class="line">执行./nginx -t命令先检查配置文件是否有错，没有错就执行以下命令：   </span><br><span class="line"></span><br><span class="line">`/usr/local/nginx/sbin/./nginx    #启动nginx`    </span><br><span class="line"></span><br><span class="line">终端没有任何提示就证明nginx启动成功。可以使用你的服务器地址查看，成功之后就会看到一个nginx欢迎页面。   </span><br><span class="line"></span><br><span class="line">15. 回到项目    </span><br><span class="line"></span><br><span class="line">在settings.py里设置：</span><br><span class="line"></span><br><span class="line">1、关闭DEBUG模式。</span><br><span class="line"></span><br><span class="line">DEBUG = False </span><br><span class="line"></span><br><span class="line">2、ALLOWED_HOSTS设置为* 表示任何IP都可以访问网站。  </span><br><span class="line"></span><br><span class="line">ALLOWED_HOSTS = [&apos;*&apos;]    </span><br><span class="line"></span><br><span class="line">16. 进入网站项目目录    </span><br><span class="line"></span><br><span class="line">`uwsgi -x mysite.xml`    </span><br><span class="line"></span><br><span class="line">17. 以上没出问题的话    </span><br><span class="line"></span><br><span class="line">`/usr/local/nginx/sbin/./nginx -s reload  #重启nginx`   </span><br><span class="line"></span><br><span class="line">此时在浏览器应该能够访问到你的项目了      </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">------ </span><br><span class="line"># 线上部署admin后台样式没有生效的问题  </span><br><span class="line"> 1. 在setting尾部：</span><br></pre></td></tr></table></figure>
 
 <p> STATIC_ROOT  = os.path.join(BASE_DIR, ‘static’)#指定样式收集目录<br>#或<br>STATIC_ROOT = ‘/www/mysite/mysite/static’  #指定样式收集目录</p>
-<pre><code>2. 收集CSS样式，在终端输入：
-`python manage.py collectstatic`  
+<pre><code>
+2. 收集CSS样式，在终端输入：  
+
+`python manage.py collectstatic`    
+
 运行这个命令之后，就会自动把后台CSS样式收集到/static/目录下。刷新页面就能恢复样式！
 
 [参考文章](https://www.django.cn/article/show-4.html#banqian)
