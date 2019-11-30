@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>centos上安装MySQL8.0</title>
+    <url>/2019/11/30/centos%E4%B8%8A%E5%AE%89%E8%A3%85MySQL8-0/</url>
+    <content><![CDATA[<h1 id="啥也不说-滚去看大佬文章"><a href="#啥也不说-滚去看大佬文章" class="headerlink" title="啥也不说 滚去看大佬文章"></a>啥也不说 滚去看大佬文章</h1><p><a href="https://blog.csdn.net/qq_36957885/article/details/90727764" target="_blank" rel="noopener">Centos安装MySQL8.0</a></p><p>/api/a</p><p>原始的 -&gt; nginx -&gt; uwsgi</p><a id="more"></a>
+
+
+<p>location /api/{</p>
+<pre><code>proxy_pass http://ip/;
+http://ip/a</code></pre><p>}</p>
+<p>location /admin/{</p>
+<pre><code>proxy_pass http://ip;
+http://ip/;</code></pre><p>}<br>uwsgi:<br>    /a</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>虚拟机无法桥接问题</title>
+    <url>/2019/11/29/%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%97%A0%E6%B3%95%E6%A1%A5%E6%8E%A5%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>今天下载了虚拟机vmare，开始用的是NAT上网，后来发现不能用远程连接工具与之连接，主机能ping不通虚拟机，虚拟机ping通主机，就尝试着改用桥接模式，但是我宿主机就没有虚拟网卡，这怎么办呢？  <a href="https://blog.csdn.net/czg13548930186/article/details/77099074" target="_blank" rel="noopener">解决方法</a></p>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>杂症</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>在Centos7中部署Django项目</title>
     <url>/2019/11/28/%E5%9C%A8Centos7%E4%B8%AD%E9%83%A8%E7%BD%B2Django%E9%A1%B9%E7%9B%AE/</url>
     <content><![CDATA[<h1 id="这次部署真的爽，一步到位，哈哈哈"><a href="#这次部署真的爽，一步到位，哈哈哈" class="headerlink" title="这次部署真的爽，一步到位，哈哈哈"></a>这次部署真的爽，一步到位，哈哈哈</h1><hr><ol>

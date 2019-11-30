@@ -57,18 +57,18 @@
   };
 </script>
 
-  <meta name="description" content="title: Django  — selldate: 2019-10-30 11:24:06tags: Djangocategories: Django">
+  <meta name="description" content="啥也不说 滚去看大佬文章Centos安装MySQL8.0/api/a原始的 -&amp;gt; nginx -&amp;gt; uwsgi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="P.J小博客">
-<meta property="og:url" content="https://qinghongzhang.github.io./2019/10/30/Django-sell/index.html">
+<meta property="og:title" content="centos上安装MySQL8.0">
+<meta property="og:url" content="https://qinghongzhang.github.io./2019/11/30/centos上安装MySQL8-0/index.html">
 <meta property="og:site_name" content="P.J小博客">
-<meta property="og:description" content="title: Django  — selldate: 2019-10-30 11:24:06tags: Djangocategories: Django">
+<meta property="og:description" content="啥也不说 滚去看大佬文章Centos安装MySQL8.0/api/a原始的 -&amp;gt; nginx -&amp;gt; uwsgi">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-03T06:57:49.705Z">
+<meta property="og:updated_time" content="2019-11-30T07:58:24.922Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="P.J小博客">
-<meta name="twitter:description" content="title: Django  — selldate: 2019-10-30 11:24:06tags: Djangocategories: Django">
-  <link rel="canonical" href="https://qinghongzhang.github.io./2019/10/30/Django-sell/">
+<meta name="twitter:title" content="centos上安装MySQL8.0">
+<meta name="twitter:description" content="啥也不说 滚去看大佬文章Centos安装MySQL8.0/api/a原始的 -&amp;gt; nginx -&amp;gt; uwsgi">
+  <link rel="canonical" href="https://qinghongzhang.github.io./2019/11/30/centos上安装MySQL8-0/">
 
 
 <script id="page-configurations">
@@ -82,7 +82,7 @@
   };
 </script>
 
-  <title> | P.J小博客</title>
+  <title>centos上安装MySQL8.0 | P.J小博客</title>
   
 
 
@@ -284,7 +284,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://qinghongzhang.github.io./2019/10/30/Django-sell/">
+    <link itemprop="mainEntityOfPage" href="https://qinghongzhang.github.io./2019/11/30/centos上安装MySQL8-0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="山有木兮">
@@ -298,7 +298,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            
+            centos上安装MySQL8.0
             
 
           
@@ -315,19 +315,11 @@
                 
               
 
-              <time title="创建时间：2019-10-30 11:24:06" itemprop="dateCreated datePublished" datetime="2019-10-30T11:24:06+08:00">2019-10-30</time>
+              <time title="创建时间：2019-11-30 13:32:02 / 修改时间：15:58:24" itemprop="dateCreated datePublished" datetime="2019-11-30T13:32:02+08:00">2019-11-30</time>
             </span>
           
             
 
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-03 14:57:49" itemprop="dateModified" datetime="2019-11-03T14:57:49+08:00">2019-11-03</time>
-              </span>
             
           
 
@@ -342,29 +334,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <hr><p>title: Django  — sell<br>date: 2019-10-30 11:24:06<br>tags: Django<br>categories: Django</p><a id="more"></a>
-
-<hr>
-<h2 id="django–shell"><a href="#django–shell" class="headerlink" title="django–shell"></a>django–shell</h2><p> 导入模型<br>    <code>from blog.models import Blog</code>—从blog这个app的models里导入模型<br>    <code>Blog.objects.all()</code>—Blog模型里的所有属性<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">blog=Blog()</span><br><span class="line">blog.title=&quot;啥子&quot;</span><br><span class="line">blog.content=&quot;xxxxx&quot;</span><br></pre></td></tr></table></figure></p>
-<pre><code>这是给Blog模型创建一个对象，给这个对象添加属性
+        <h1 id="啥也不说-滚去看大佬文章"><a href="#啥也不说-滚去看大佬文章" class="headerlink" title="啥也不说 滚去看大佬文章"></a>啥也不说 滚去看大佬文章</h1><p><a href="https://blog.csdn.net/qq_36957885/article/details/90727764" target="_blank" rel="noopener">Centos安装MySQL8.0</a></p><p>/api/a</p><p>原始的 -&gt; nginx -&gt; uwsgi</p><a id="more"></a>
 
 
-`from django.contrib.auth.models import User`---这是django自带的库
-` User.objects.all()`---通过这个能够查询出你创建的所有的账户
-`blog.save()`----这个是保存我们创建的那个对象
-`dir(blog)`---查询blog对象有哪些属性 通过blog.属性名 调用
+<p>location /api/{</p>
+<pre><code>proxy_pass http://ip/;
+http://ip/a</code></pre><p>}</p>
+<p>location /admin/{</p>
+<pre><code>proxy_pass http://ip;
+http://ip/;</code></pre><p>}<br>uwsgi:<br>    /a</p>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">for i in range(1,31):</span><br><span class="line">    blog=Blog()</span><br><span class="line">    blog.title=&quot;for %s&quot;% i</span><br><span class="line">    blog.content=&quot;xxxx: %s&quot;% i</span><br><span class="line">    blog.blog_type=blog_type</span><br><span class="line">    blog.auth=user</span><br><span class="line">    blog.save()</span><br></pre></td></tr></table></figure>
-
-创建了三十篇文章
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">blogs=Blog.objects.all()</span><br><span class="line"> blogs.count()</span><br></pre></td></tr></table></figure>
-
-这是统计数据库中有多少个Blog模型（文章）
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">   from django.core.paginator import Paginator #自带的分页器</span><br><span class="line">   blogs=Blog.objects.all()</span><br><span class="line">    blogs.count()</span><br><span class="line">   paginator=Paginator(blogs,10)#把这个对象按10篇分一页，执行这个的时候一般还会报错，那是</span><br><span class="line">   因为你没有给你的文章排序，可以去models.py里添加</span><br><span class="line">   </span><br><span class="line">class Meta:</span><br><span class="line">	ordering=[&apos;-created_time&apos;]  #按创建时间的倒叙排序，就是最新的文章在最上面</span><br></pre></td></tr></table></figure>
-
-`dir(paginator)`查看有哪些属性
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">paginator.num_pages #一共有几页</span><br><span class="line">4</span><br><span class="line">paginator.page_range#页数范围</span><br><span class="line">range(1, 5)</span><br><span class="line">pag1=paginator.page(1)#第一页</span><br><span class="line"> pag1      </span><br><span class="line">&lt;Page 1 of 4&gt;</span><br><span class="line">pag1.object_list#第一页的列表</span><br><span class="line">pag1.object_list.count()第一页的文章数</span><br></pre></td></tr></table></figure></code></pre>
     </div>
 
     
@@ -405,8 +384,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/10/19/Django评论登录/" rel="next" title="Django评论登录">
-                  <i class="fa fa-chevron-left"></i> Django评论登录
+                <a href="/2019/11/29/虚拟机无法桥接问题/" rel="next" title="虚拟机无法桥接问题">
+                  <i class="fa fa-chevron-left"></i> 虚拟机无法桥接问题
                 </a>
               
             </div>
@@ -414,10 +393,6 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2019/11/03/Django部署时报错SQLite-3-8-3-or-later-is-required-found-3-7-17/" rel="prev" title="Django部署时报错SQLite 3.8.3 or later is required (found 3.7.17)">
-                  Django部署时报错SQLite 3.8.3 or later is required (found 3.7.17) <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
@@ -463,7 +438,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#django–shell"><span class="nav-number">1.</span> <span class="nav-text">django–shell</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#啥也不说-滚去看大佬文章"><span class="nav-number">1.</span> <span class="nav-text">啥也不说 滚去看大佬文章</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->

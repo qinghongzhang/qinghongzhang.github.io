@@ -57,32 +57,31 @@
   };
 </script>
 
-  <meta name="description" content="title: Django  — selldate: 2019-10-30 11:24:06tags: Djangocategories: Django">
-<meta property="og:type" content="article">
+  <meta name="description" content="能力已经跟不上野心，学习。。。。">
+<meta property="og:type" content="website">
 <meta property="og:title" content="P.J小博客">
-<meta property="og:url" content="https://qinghongzhang.github.io./2019/10/30/Django-sell/index.html">
+<meta property="og:url" content="https://qinghongzhang.github.io./page/2/index.html">
 <meta property="og:site_name" content="P.J小博客">
-<meta property="og:description" content="title: Django  — selldate: 2019-10-30 11:24:06tags: Djangocategories: Django">
+<meta property="og:description" content="能力已经跟不上野心，学习。。。。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-03T06:57:49.705Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="P.J小博客">
-<meta name="twitter:description" content="title: Django  — selldate: 2019-10-30 11:24:06tags: Djangocategories: Django">
-  <link rel="canonical" href="https://qinghongzhang.github.io./2019/10/30/Django-sell/">
+<meta name="twitter:description" content="能力已经跟不上野心，学习。。。。">
+  <link rel="canonical" href="https://qinghongzhang.github.io./page/2/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: false,
-    isPost: true,
+    isHome: true,
+    isPost: false,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title> | P.J小博客</title>
+  <title>P.J小博客 - Stay Hungry, Stay Foolish</title>
   
 
 
@@ -280,11 +279,11 @@
             
 
   <div class="posts-expand">
-      
+        
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://qinghongzhang.github.io./2019/10/30/Django-sell/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://qinghongzhang.github.io./2019/10/13/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="山有木兮">
@@ -299,8 +298,7 @@
         <h2 class="post-title" itemprop="name headline">
           
             
-            
-
+            <a href="/2019/10/13/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
           
         </h2>
 
@@ -315,7 +313,7 @@
                 
               
 
-              <time title="创建时间：2019-10-30 11:24:06" itemprop="dateCreated datePublished" datetime="2019-10-30T11:24:06+08:00">2019-10-30</time>
+              <time title="创建时间：2019-10-13 23:35:29" itemprop="dateCreated datePublished" datetime="2019-10-13T23:35:29+08:00">2019-10-13</time>
             </span>
           
             
@@ -326,7 +324,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-03 14:57:49" itemprop="dateModified" datetime="2019-11-03T14:57:49+08:00">2019-11-03</time>
+                <time title="修改时间：2019-10-18 23:08:53" itemprop="dateModified" datetime="2019-10-18T23:08:53+08:00">2019-10-18</time>
               </span>
             
           
@@ -342,29 +340,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <hr><p>title: Django  — sell<br>date: 2019-10-30 11:24:06<br>tags: Django<br>categories: Django</p><a id="more"></a>
-
-<hr>
-<h2 id="django–shell"><a href="#django–shell" class="headerlink" title="django–shell"></a>django–shell</h2><p> 导入模型<br>    <code>from blog.models import Blog</code>—从blog这个app的models里导入模型<br>    <code>Blog.objects.all()</code>—Blog模型里的所有属性<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">blog=Blog()</span><br><span class="line">blog.title=&quot;啥子&quot;</span><br><span class="line">blog.content=&quot;xxxxx&quot;</span><br></pre></td></tr></table></figure></p>
-<pre><code>这是给Blog模型创建一个对象，给这个对象添加属性
-
-
-`from django.contrib.auth.models import User`---这是django自带的库
-` User.objects.all()`---通过这个能够查询出你创建的所有的账户
-`blog.save()`----这个是保存我们创建的那个对象
-`dir(blog)`---查询blog对象有哪些属性 通过blog.属性名 调用
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">for i in range(1,31):</span><br><span class="line">    blog=Blog()</span><br><span class="line">    blog.title=&quot;for %s&quot;% i</span><br><span class="line">    blog.content=&quot;xxxx: %s&quot;% i</span><br><span class="line">    blog.blog_type=blog_type</span><br><span class="line">    blog.auth=user</span><br><span class="line">    blog.save()</span><br></pre></td></tr></table></figure>
-
-创建了三十篇文章
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">blogs=Blog.objects.all()</span><br><span class="line"> blogs.count()</span><br></pre></td></tr></table></figure>
-
-这是统计数据库中有多少个Blog模型（文章）
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">   from django.core.paginator import Paginator #自带的分页器</span><br><span class="line">   blogs=Blog.objects.all()</span><br><span class="line">    blogs.count()</span><br><span class="line">   paginator=Paginator(blogs,10)#把这个对象按10篇分一页，执行这个的时候一般还会报错，那是</span><br><span class="line">   因为你没有给你的文章排序，可以去models.py里添加</span><br><span class="line">   </span><br><span class="line">class Meta:</span><br><span class="line">	ordering=[&apos;-created_time&apos;]  #按创建时间的倒叙排序，就是最新的文章在最上面</span><br></pre></td></tr></table></figure>
-
-`dir(paginator)`查看有哪些属性
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">paginator.num_pages #一共有几页</span><br><span class="line">4</span><br><span class="line">paginator.page_range#页数范围</span><br><span class="line">range(1, 5)</span><br><span class="line">pag1=paginator.page(1)#第一页</span><br><span class="line"> pag1      </span><br><span class="line">&lt;Page 1 of 4&gt;</span><br><span class="line">pag1.object_list#第一页的列表</span><br><span class="line">pag1.object_list.count()第一页的文章数</span><br></pre></td></tr></table></figure></code></pre>
+          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+          <!--noindex-->
+          
+            <div class="post-button">
+              <a class="btn" href="/2019/10/13/hello-world/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
     </div>
 
     
@@ -372,64 +359,22 @@
     
       
 
-        
-      
-        <div class="reward-container">
-  <div>创作不易，请多支持</div>
-  <button disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
-    打赏
-  </button>
-  <div id="qr" style="display: none;">
-        
-      
-      <div style="display: inline-block;">
-        <img src="/images/weixin.png" alt="山有木兮 微信支付">
-        <p>微信支付</p>
-      </div>
-        
-      
-      <div style="display: inline-block;">
-        <img src="/images/zhifubao.jpg" alt="山有木兮 支付宝">
-        <p>支付宝</p>
-      </div>
-
-  </div>
-</div>
-
-      
-
       <footer class="post-footer">
-
-        
-
-          <div class="post-nav">
-            <div class="post-nav-next post-nav-item">
-              
-                <a href="/2019/10/19/Django评论登录/" rel="next" title="Django评论登录">
-                  <i class="fa fa-chevron-left"></i> Django评论登录
-                </a>
-              
-            </div>
-
-            <span class="post-nav-divider"></span>
-
-            <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2019/11/03/Django部署时报错SQLite-3-8-3-or-later-is-required-found-3-7-17/" rel="prev" title="Django部署时报错SQLite 3.8.3 or later is required (found 3.7.17)">
-                  Django部署时报错SQLite 3.8.3 or later is required (found 3.7.17) <i class="fa fa-chevron-right"></i>
-                </a>
-              
-            </div>
-          </div>
-        
+        <div class="post-eof"></div>
       </footer>
-    
   </article>
   
   
   
 
+    
   </div>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
 
 
           </div>
@@ -446,11 +391,6 @@
 
   <aside class="sidebar">
     <div class="sidebar-inner">
-        
-        
-        
-        
-      
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
@@ -463,8 +403,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#django–shell"><span class="nav-number">1.</span> <span class="nav-text">django–shell</span></a></li></ol></div>
-        
       </div>
       <!--/noindex-->
 
