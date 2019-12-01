@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Nginx 反向代理(初学)</title>
+    <url>/2019/12/01/Nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86-%E5%88%9D%E5%AD%A6/</url>
+    <content><![CDATA[<h1 id="使用Nginx代理项目"><a href="#使用Nginx代理项目" class="headerlink" title="使用Nginx代理项目"></a>使用Nginx代理项目</h1><hr><p>昨天历时一月半的项目已经完结了，项目后期。认识了一项新的技术，—-反向代理。所以今晚就迫不及待的把昨天的项目给尝试代理了，代理成功了。</p><a id="more"></a>
+
+<h2 id="首先把nginx的被注释掉的配置文件全删除"><a href="#首先把nginx的被注释掉的配置文件全删除" class="headerlink" title="首先把nginx的被注释掉的配置文件全删除"></a>首先把nginx的被注释掉的配置文件全删除</h2><p>删除完全后大概只有27行左右。<br>先来讲讲location的作用吧。<br>先来说说location的路径匹配规则吧。有四种：</p>
+<figure class="highlight plain"><figcaption><span>/ &#123;</span></figcaption><table><tr><td class="code"><pre><span class="line">                                        // 原生的匹配规则，优先级最低</span><br><span class="line">&#125;  </span><br><span class="line">location = /a &#123;                         //优先级最高的一种匹配规则，完全匹配  http://ip/a 才能匹配到，其他的                                        匹配不到   </span><br><span class="line">&#125;  </span><br><span class="line">location ^~ /a &#123;                       //次高级，匹配所有/a开头的，比如http://ip/a/b，都能被这个规则匹配</span><br><span class="line">    </span><br><span class="line">&#125;  </span><br><span class="line">location ~ /\w &#123;                      //匹配正则</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line">但其实我们代理的时候还是有些小技巧的。比如说: </span><br><span class="line">```http &#123;</span><br><span class="line">    include       mime.types;</span><br><span class="line">    default_type  application/octet-stream;</span><br><span class="line">    sendfile        on;</span><br><span class="line">    keepalive_timeout  65;</span><br><span class="line"></span><br><span class="line">    server &#123;</span><br><span class="line">        listen       80;</span><br><span class="line">        server_name  localhost;</span><br><span class="line">        location /aps/ &#123;</span><br><span class="line">            root   html;</span><br><span class="line">            index  index.html index.htm;</span><br><span class="line">        &#125;</span><br><span class="line">       </span><br><span class="line">        location / &#123;</span><br><span class="line">            proxy_pass http://47.103.222.209:80;#代理我的项目</span><br><span class="line">        &#125;</span><br><span class="line">        location /hh &#123;</span><br><span class="line">            proxy_pass http://47.103.222.209:80/;# /hh 接到了http://47.103.222.209:80后面，相当于访问的是http://47.103.222.209:80/hh</span><br><span class="line">        &#125;</span><br><span class="line">        location /hh/ &#123;</span><br><span class="line">            proxy_pass http://47.103.222.209:80/;    #把/hh/参数    相当于把第二个/后的参数接到 http://47.103.222.209:80后面。</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">## 负载均衡  </span><br><span class="line">    ```upstream group1&#123;                                  #这个代理可以访问80,81这两个端口的内容，其中weight</span><br><span class="line">        server 47.103.222.209:80 weight=10;                 是权重，两个weight都等于1,那么你输入相同的网址这冯访问的是80端口，下一次就是81端口，如果不设置，那么访问谁，就                                                            机的，修改权重可以改变访问那个代理的机会。</span><br><span class="line">        server 47.103.222.209:81 weight=1;</span><br><span class="line">    &#125;</span><br><span class="line">    server &#123;</span><br><span class="line">        listen       80;</span><br><span class="line">        server_name  localhost;</span><br><span class="line">        location /aps/ &#123;</span><br><span class="line">            root   html;</span><br><span class="line">            index  index.html index.htm;</span><br><span class="line">        &#125;</span><br><span class="line">       </span><br><span class="line">        location /&#123;</span><br><span class="line">            proxy_pass http://group1/;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>服务器</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>centos上安装MySQL8.0</title>
     <url>/2019/11/30/centos%E4%B8%8A%E5%AE%89%E8%A3%85MySQL8-0/</url>
-    <content><![CDATA[<h1 id="啥也不说-滚去看大佬文章"><a href="#啥也不说-滚去看大佬文章" class="headerlink" title="啥也不说 滚去看大佬文章"></a>啥也不说 滚去看大佬文章</h1><p><a href="https://blog.csdn.net/qq_36957885/article/details/90727764" target="_blank" rel="noopener">Centos安装MySQL8.0</a></p><p>/api/a</p><p>原始的 -&gt; nginx -&gt; uwsgi</p><a id="more"></a>
-
-
-<p>location /api/{</p>
-<pre><code>proxy_pass http://ip/;
-http://ip/a</code></pre><p>}</p>
-<p>location /admin/{</p>
-<pre><code>proxy_pass http://ip;
-http://ip/;</code></pre><p>}<br>uwsgi:<br>    /a</p>
+    <content><![CDATA[<h1 id="啥也不说-滚去看大佬文章"><a href="#啥也不说-滚去看大佬文章" class="headerlink" title="啥也不说 滚去看大佬文章"></a>啥也不说 滚去看大佬文章</h1><p><a href="https://blog.csdn.net/qq_36957885/article/details/90727764" target="_blank" rel="noopener">Centos安装MySQL8.0</a></p>
 ]]></content>
   </entry>
   <entry>
