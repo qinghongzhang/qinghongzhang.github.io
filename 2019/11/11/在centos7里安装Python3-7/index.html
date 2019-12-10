@@ -57,18 +57,18 @@
   };
 </script>
 
-  <meta name="description" content="阿里云自带python2.7,这里我们需要安装python3.7,这里有我安装的一些步骤  1.更新yum（个人习惯，可忽略）yum update2.切换到home目录（可以选择你喜欢的目录，不一定是home）cd /home3.下载python3.7.2的安装包到home目录；wget https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tg">
+  <meta name="description" content="阿里云自带python2.7,这里我们需要安装python3.7,这里有我安装的一些步骤">
 <meta name="keywords" content="服务器">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在centos7里安装Python3.7">
 <meta property="og:url" content="https://qinghongzhang.github.io./2019/11/11/在centos7里安装Python3-7/index.html">
 <meta property="og:site_name" content="P.J小博客">
-<meta property="og:description" content="阿里云自带python2.7,这里我们需要安装python3.7,这里有我安装的一些步骤  1.更新yum（个人习惯，可忽略）yum update2.切换到home目录（可以选择你喜欢的目录，不一定是home）cd /home3.下载python3.7.2的安装包到home目录；wget https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tg">
+<meta property="og:description" content="阿里云自带python2.7,这里我们需要安装python3.7,这里有我安装的一些步骤">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-11-11T07:55:50.909Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在centos7里安装Python3.7">
-<meta name="twitter:description" content="阿里云自带python2.7,这里我们需要安装python3.7,这里有我安装的一些步骤  1.更新yum（个人习惯，可忽略）yum update2.切换到home目录（可以选择你喜欢的目录，不一定是home）cd /home3.下载python3.7.2的安装包到home目录；wget https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tg">
+<meta name="twitter:description" content="阿里云自带python2.7,这里我们需要安装python3.7,这里有我安装的一些步骤">
   <link rel="canonical" href="https://qinghongzhang.github.io./2019/11/11/在centos7里安装Python3-7/">
 
 
@@ -352,8 +352,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>阿里云自带python2.7,这里我们需要安装python3.7,这里有我安装的一些步骤  </p><p>1.更新yum（个人习惯，可忽略）<br><code>yum update</code><br>2.切换到home目录（可以选择你喜欢的目录，不一定是home）<br><code>cd /home</code><br>3.下载python3.7.2的安装包到home目录；<br><code>wget https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tgz</code><br>4.解压<br><code>tar -xvzf Python-3.7.2.tgz</code><br>5.进入解压后的目录；<br><code>cd Python-3.7.2</code><br>6.安装依赖环境<br><code>yum -y install bzip2 bzip2-devel ncurses openssl openssl-devel openssl-static xz lzma xz-devel sqlite sqlite-devel gdbm gdbm-devel tk tk-devel libffi-devel</code><br>7.配置编译参数，把地址修改成/usr/local<br><code>./configure --prefix=/usr/local</code><br>8.编译以及安装  </p><a id="more"></a>
-
+        <p>阿里云自带python2.7,这里我们需要安装python3.7,这里有我安装的一些步骤  </p><a id="more"></a>
+<p>1.更新yum（个人习惯，可忽略）<br><code>yum update</code><br>2.切换到home目录（可以选择你喜欢的目录，不一定是home）<br><code>cd /home</code><br>3.下载python3.7.2的安装包到home目录；<br><code>wget https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tgz</code><br>4.解压<br><code>tar -xvzf Python-3.7.2.tgz</code><br>5.进入解压后的目录；<br><code>cd Python-3.7.2</code><br>6.安装依赖环境<br><code>yum -y install bzip2 bzip2-devel ncurses openssl openssl-devel openssl-static xz lzma xz-devel sqlite sqlite-devel gdbm gdbm-devel tk tk-devel libffi-devel</code><br>7.配置编译参数，把地址修改成/usr/local<br><code>./configure --prefix=/usr/local</code><br>8.编译以及安装  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#编译  </span><br><span class="line">make  </span><br><span class="line">#安装   </span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
 
 <p>9.在/etc/ld.so.conf配置python库的路径；<br><code>vim /etc/ld.so.conf.d/python3.conf</code></p>

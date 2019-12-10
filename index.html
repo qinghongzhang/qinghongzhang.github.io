@@ -357,11 +357,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="用户及文件权限管理"><a href="#用户及文件权限管理" class="headerlink" title="用户及文件权限管理"></a>用户及文件权限管理</h1><h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><ol>
-<li>查看用户<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">who am i </span><br><span class="line">或者 </span><br><span class="line">who mom likes</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol><p>如果查看当前用户的用户名<code>whoami</code>即可<br><code>who</code>命令其他常用参数<br>| 参数    | 说明 |<br>| —— | —— |<br>|-a    |打印能打印的全部|<br>|-d    |打印死掉的进程|<br>|-m    |同am i,mom likes|<br>|-q    |打印当前登录用户数及用户名|<br>|-u    |打印当前登录用户登录信息|<br>|-r    |打印运行等级|<br>2. 创建用户<br>Linux系统中root用户拥有整个系统至高无上的权力，比如 新建/添加 用户<br>如果你是在root状态下可以直接创建用户，那如果是一般用户在命令前必须加 <code>sudo</code>才能创建，它会暂时给你root权限<br><code>su &lt;user&gt;</code> 可以切换到用户 user，执行时需要输入目标用户的密码，sudo <cmd> 可以以特权级别运行 cmd 命令，需要当前用户属于 sudo 组，且需要输入当前用户的密码。<code>su - &lt;user&gt;</code> 命令也是切换用户，同时环境变量也会跟着改变成目标用户的环境变量。    </cmd></p>
+          <h1 id="用户及文件权限管理"><a href="#用户及文件权限管理" class="headerlink" title="用户及文件权限管理"></a>用户及文件权限管理</h1><h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2>
           <!--noindex-->
           
             <div class="post-button">
@@ -549,7 +545,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="使用Nginx代理项目"><a href="#使用Nginx代理项目" class="headerlink" title="使用Nginx代理项目"></a>使用Nginx代理项目</h1><hr><p>昨天历时一月半的项目已经完结了，项目后期。认识了一项新的技术，—-反向代理。所以今晚就迫不及待的把昨天的项目给尝试代理了，代理成功了。</p>
+          <h1 id="使用Nginx代理项目"><a href="#使用Nginx代理项目" class="headerlink" title="使用Nginx代理项目"></a>使用Nginx代理项目</h1>
           <!--noindex-->
           
             <div class="post-button">
@@ -638,8 +634,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="啥也不说-滚去看大佬文章"><a href="#啥也不说-滚去看大佬文章" class="headerlink" title="啥也不说 滚去看大佬文章"></a>啥也不说 滚去看大佬文章</h1><p><a href="https://blog.csdn.net/qq_36957885/article/details/90727764" target="_blank" rel="noopener">Centos安装MySQL8.0</a></p>
-
+          <h1 id="啥也不说-滚去看大佬文章"><a href="#啥也不说-滚去看大佬文章" class="headerlink" title="啥也不说 滚去看大佬文章"></a>啥也不说 滚去看大佬文章</h1>
+          <!--noindex-->
+          
+            <div class="post-button">
+              <a class="btn" href="/2019/11/30/centos上安装MySQL8-0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -818,10 +822,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="这次部署真的爽，一步到位，哈哈哈"><a href="#这次部署真的爽，一步到位，哈哈哈" class="headerlink" title="这次部署真的爽，一步到位，哈哈哈"></a>这次部署真的爽，一步到位，哈哈哈</h1><hr><ol>
-<li>首先你你得去<a href="https://qinghongzhang.github.io/2019/11/11/%E5%9C%A8centos7%E9%87%8C%E5%AE%89%E8%A3%85Python3-7/" target="_blank" rel="noopener">安装python</a>,去看看我的这篇博客吧，骚年！ </li>
-<li>还是建议大家在虚拟环境里操作的  </li>
-</ol>
+          <h1 id="这次部署真的爽，一步到位，哈哈哈"><a href="#这次部署真的爽，一步到位，哈哈哈" class="headerlink" title="这次部署真的爽，一步到位，哈哈哈"></a>这次部署真的爽，一步到位，哈哈哈</h1>
           <!--noindex-->
           
             <div class="post-button">
@@ -1171,7 +1172,7 @@ port=3306 </code></pre></li>
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>阿里云自带python2.7,这里我们需要安装python3.7,这里有我安装的一些步骤  </p><p>1.更新yum（个人习惯，可忽略）<br><code>yum update</code><br>2.切换到home目录（可以选择你喜欢的目录，不一定是home）<br><code>cd /home</code><br>3.下载python3.7.2的安装包到home目录；<br><code>wget https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tgz</code><br>4.解压<br><code>tar -xvzf Python-3.7.2.tgz</code><br>5.进入解压后的目录；<br><code>cd Python-3.7.2</code><br>6.安装依赖环境<br><code>yum -y install bzip2 bzip2-devel ncurses openssl openssl-devel openssl-static xz lzma xz-devel sqlite sqlite-devel gdbm gdbm-devel tk tk-devel libffi-devel</code><br>7.配置编译参数，把地址修改成/usr/local<br><code>./configure --prefix=/usr/local</code><br>8.编译以及安装  </p>
+          <p>阿里云自带python2.7,这里我们需要安装python3.7,这里有我安装的一些步骤  </p>
           <!--noindex-->
           
             <div class="post-button">

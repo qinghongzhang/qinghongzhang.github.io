@@ -3,12 +3,12 @@
   <entry>
     <title>Linux(一）--用户管理</title>
     <url>/2019/12/07/Linux-%E4%B8%80%EF%BC%89-%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/</url>
-    <content><![CDATA[<h1 id="用户及文件权限管理"><a href="#用户及文件权限管理" class="headerlink" title="用户及文件权限管理"></a>用户及文件权限管理</h1><h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><ol>
+    <content><![CDATA[<h1 id="用户及文件权限管理"><a href="#用户及文件权限管理" class="headerlink" title="用户及文件权限管理"></a>用户及文件权限管理</h1><h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><a id="more"></a><ol>
 <li>查看用户<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">who am i </span><br><span class="line">或者 </span><br><span class="line">who mom likes</span><br></pre></td></tr></table></figure>
 
 </li>
-</ol><p>如果查看当前用户的用户名<code>whoami</code>即可<br><code>who</code>命令其他常用参数<br>| 参数    | 说明 |<br>| —— | —— |<br>|-a    |打印能打印的全部|<br>|-d    |打印死掉的进程|<br>|-m    |同am i,mom likes|<br>|-q    |打印当前登录用户数及用户名|<br>|-u    |打印当前登录用户登录信息|<br>|-r    |打印运行等级|<br>2. 创建用户<br>Linux系统中root用户拥有整个系统至高无上的权力，比如 新建/添加 用户<br>如果你是在root状态下可以直接创建用户，那如果是一般用户在命令前必须加 <code>sudo</code>才能创建，它会暂时给你root权限<br><code>su &lt;user&gt;</code> 可以切换到用户 user，执行时需要输入目标用户的密码，sudo <cmd> 可以以特权级别运行 cmd 命令，需要当前用户属于 sudo 组，且需要输入当前用户的密码。<code>su - &lt;user&gt;</code> 命令也是切换用户，同时环境变量也会跟着改变成目标用户的环境变量。    </cmd></p><a id="more"></a>
-
+</ol>
+<p>如果查看当前用户的用户名<code>whoami</code>即可<br><code>who</code>命令其他常用参数<br>| 参数    | 说明 |<br>| —— | —— |<br>|-a    |打印能打印的全部|<br>|-d    |打印死掉的进程|<br>|-m    |同am i,mom likes|<br>|-q    |打印当前登录用户数及用户名|<br>|-u    |打印当前登录用户登录信息|<br>|-r    |打印运行等级|<br>2. 创建用户<br>Linux系统中root用户拥有整个系统至高无上的权力，比如 新建/添加 用户<br>如果你是在root状态下可以直接创建用户，那如果是一般用户在命令前必须加 <code>sudo</code>才能创建，它会暂时给你root权限<br><code>su &lt;user&gt;</code> 可以切换到用户 user，执行时需要输入目标用户的密码，sudo <cmd> 可以以特权级别运行 cmd 命令，需要当前用户属于 sudo 组，且需要输入当前用户的密码。<code>su - &lt;user&gt;</code> 命令也是切换用户，同时环境变量也会跟着改变成目标用户的环境变量。    </cmd></p>
 <ul>
 <li><p>新建用户<br><code>sudo adduser username</code>如果是root可以不加sudo  </p>
 </li>
@@ -77,8 +77,8 @@
   <entry>
     <title>Nginx 反向代理(初学)</title>
     <url>/2019/12/01/Nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86-%E5%88%9D%E5%AD%A6/</url>
-    <content><![CDATA[<h1 id="使用Nginx代理项目"><a href="#使用Nginx代理项目" class="headerlink" title="使用Nginx代理项目"></a>使用Nginx代理项目</h1><hr><p>昨天历时一月半的项目已经完结了，项目后期。认识了一项新的技术，—-反向代理。所以今晚就迫不及待的把昨天的项目给尝试代理了，代理成功了。</p><a id="more"></a>
-
+    <content><![CDATA[<h1 id="使用Nginx代理项目"><a href="#使用Nginx代理项目" class="headerlink" title="使用Nginx代理项目"></a>使用Nginx代理项目</h1><a id="more"></a><hr>
+<p>昨天历时一月半的项目已经完结了，项目后期。认识了一项新的技术，—-反向代理。所以今晚就迫不及待的把昨天的项目给尝试代理了，代理成功了。</p>
 <h2 id="首先把nginx的被注释掉的配置文件全删除"><a href="#首先把nginx的被注释掉的配置文件全删除" class="headerlink" title="首先把nginx的被注释掉的配置文件全删除"></a>首先把nginx的被注释掉的配置文件全删除</h2><p>删除完全后大概只有27行左右。<br>先来讲讲location的作用吧。<br>先来说说location的路径匹配规则吧。有四种：</p>
 <figure class="highlight plain"><figcaption><span>/ &#123;</span></figcaption><table><tr><td class="code"><pre><span class="line">                                        // 原生的匹配规则，优先级最低</span><br><span class="line">&#125;  </span><br><span class="line">location = /a &#123;                         //优先级最高的一种匹配规则，完全匹配  http://ip/a 才能匹配到，其他的                                        匹配不到   </span><br><span class="line">&#125;  </span><br><span class="line">location ^~ /a &#123;                       //次高级，匹配所有/a开头的，比如http://ip/a/b，都能被这个规则匹配</span><br><span class="line">    </span><br><span class="line">&#125;  </span><br><span class="line">location ~ /\w &#123;                      //匹配正则</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line">但其实我们代理的时候还是有些小技巧的。比如说: </span><br><span class="line">```http &#123;</span><br><span class="line">    include       mime.types;</span><br><span class="line">    default_type  application/octet-stream;</span><br><span class="line">    sendfile        on;</span><br><span class="line">    keepalive_timeout  65;</span><br><span class="line"></span><br><span class="line">    server &#123;</span><br><span class="line">        listen       80;</span><br><span class="line">        server_name  localhost;</span><br><span class="line">        location /aps/ &#123;</span><br><span class="line">            root   html;</span><br><span class="line">            index  index.html index.htm;</span><br><span class="line">        &#125;</span><br><span class="line">       </span><br><span class="line">        location / &#123;</span><br><span class="line">            proxy_pass http://47.103.222.209:80;#代理我的项目</span><br><span class="line">        &#125;</span><br><span class="line">        location /hh &#123;</span><br><span class="line">            proxy_pass http://47.103.222.209:80/;# /hh 接到了http://47.103.222.209:80后面，相当于访问的是http://47.103.222.209:80/hh</span><br><span class="line">        &#125;</span><br><span class="line">        location /hh/ &#123;</span><br><span class="line">            proxy_pass http://47.103.222.209:80/;    #把/hh/参数    相当于把第二个/后的参数接到 http://47.103.222.209:80后面。</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">## 负载均衡  </span><br><span class="line">    ```upstream group1&#123;                                  #这个代理可以访问80,81这两个端口的内容，其中weight</span><br><span class="line">        server 47.103.222.209:80 weight=10;                 是权重，两个weight都等于1,那么你输入相同的网址这冯访问的是80端口，下一次就是81端口，如果不设置，那么访问谁，就                                                            机的，修改权重可以改变访问那个代理的机会。</span><br><span class="line">        server 47.103.222.209:81 weight=1;</span><br><span class="line">    &#125;</span><br><span class="line">    server &#123;</span><br><span class="line">        listen       80;</span><br><span class="line">        server_name  localhost;</span><br><span class="line">        location /aps/ &#123;</span><br><span class="line">            root   html;</span><br><span class="line">            index  index.html index.htm;</span><br><span class="line">        &#125;</span><br><span class="line">       </span><br><span class="line">        location /&#123;</span><br><span class="line">            proxy_pass http://group1/;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
@@ -91,7 +91,7 @@
   <entry>
     <title>centos上安装MySQL8.0</title>
     <url>/2019/11/30/centos%E4%B8%8A%E5%AE%89%E8%A3%85MySQL8-0/</url>
-    <content><![CDATA[<h1 id="啥也不说-滚去看大佬文章"><a href="#啥也不说-滚去看大佬文章" class="headerlink" title="啥也不说 滚去看大佬文章"></a>啥也不说 滚去看大佬文章</h1><p><a href="https://blog.csdn.net/qq_36957885/article/details/90727764" target="_blank" rel="noopener">Centos安装MySQL8.0</a></p>
+    <content><![CDATA[<h1 id="啥也不说-滚去看大佬文章"><a href="#啥也不说-滚去看大佬文章" class="headerlink" title="啥也不说 滚去看大佬文章"></a>啥也不说 滚去看大佬文章</h1><a id="more"></a><p><a href="https://blog.csdn.net/qq_36957885/article/details/90727764" target="_blank" rel="noopener">Centos安装MySQL8.0</a></p>
 ]]></content>
   </entry>
   <entry>
@@ -109,11 +109,11 @@
   <entry>
     <title>在Centos7中部署Django项目</title>
     <url>/2019/11/28/%E5%9C%A8Centos7%E4%B8%AD%E9%83%A8%E7%BD%B2Django%E9%A1%B9%E7%9B%AE/</url>
-    <content><![CDATA[<h1 id="这次部署真的爽，一步到位，哈哈哈"><a href="#这次部署真的爽，一步到位，哈哈哈" class="headerlink" title="这次部署真的爽，一步到位，哈哈哈"></a>这次部署真的爽，一步到位，哈哈哈</h1><hr><ol>
+    <content><![CDATA[<h1 id="这次部署真的爽，一步到位，哈哈哈"><a href="#这次部署真的爽，一步到位，哈哈哈" class="headerlink" title="这次部署真的爽，一步到位，哈哈哈"></a>这次部署真的爽，一步到位，哈哈哈</h1><a id="more"></a><hr>
+<ol>
 <li>首先你你得去<a href="https://qinghongzhang.github.io/2019/11/11/%E5%9C%A8centos7%E9%87%8C%E5%AE%89%E8%A3%85Python3-7/" target="_blank" rel="noopener">安装python</a>,去看看我的这篇博客吧，骚年！ </li>
 <li>还是建议大家在虚拟环境里操作的  </li>
-</ol><a id="more"></a>
-
+</ol>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pip3 install virtualenv  #下载虚拟环境包</span><br><span class="line">ln -s /usr/local/python3/bin/virtualenv /usr/bin/virtualenv  #建立软连接</span><br><span class="line"></span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">3. 安装成功在根目录下建立两个文件夹，主要用于存放env和网站文件的。(个人习惯，其它人可根据自己的实际情况处理)</span><br></pre></td></tr></table></figure>
 
 <p>mkdir -p /data/env<br>mkdir -p /data/wwwroot</p>
@@ -316,8 +316,8 @@ port=3306 </code></pre></li>
   <entry>
     <title>在centos7里安装Python3.7</title>
     <url>/2019/11/11/%E5%9C%A8centos7%E9%87%8C%E5%AE%89%E8%A3%85Python3-7/</url>
-    <content><![CDATA[<p>阿里云自带python2.7,这里我们需要安装python3.7,这里有我安装的一些步骤  </p><p>1.更新yum（个人习惯，可忽略）<br><code>yum update</code><br>2.切换到home目录（可以选择你喜欢的目录，不一定是home）<br><code>cd /home</code><br>3.下载python3.7.2的安装包到home目录；<br><code>wget https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tgz</code><br>4.解压<br><code>tar -xvzf Python-3.7.2.tgz</code><br>5.进入解压后的目录；<br><code>cd Python-3.7.2</code><br>6.安装依赖环境<br><code>yum -y install bzip2 bzip2-devel ncurses openssl openssl-devel openssl-static xz lzma xz-devel sqlite sqlite-devel gdbm gdbm-devel tk tk-devel libffi-devel</code><br>7.配置编译参数，把地址修改成/usr/local<br><code>./configure --prefix=/usr/local</code><br>8.编译以及安装  </p><a id="more"></a>
-
+    <content><![CDATA[<p>阿里云自带python2.7,这里我们需要安装python3.7,这里有我安装的一些步骤  </p><a id="more"></a>
+<p>1.更新yum（个人习惯，可忽略）<br><code>yum update</code><br>2.切换到home目录（可以选择你喜欢的目录，不一定是home）<br><code>cd /home</code><br>3.下载python3.7.2的安装包到home目录；<br><code>wget https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tgz</code><br>4.解压<br><code>tar -xvzf Python-3.7.2.tgz</code><br>5.进入解压后的目录；<br><code>cd Python-3.7.2</code><br>6.安装依赖环境<br><code>yum -y install bzip2 bzip2-devel ncurses openssl openssl-devel openssl-static xz lzma xz-devel sqlite sqlite-devel gdbm gdbm-devel tk tk-devel libffi-devel</code><br>7.配置编译参数，把地址修改成/usr/local<br><code>./configure --prefix=/usr/local</code><br>8.编译以及安装  </p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#编译  </span><br><span class="line">make  </span><br><span class="line">#安装   </span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
 
 <p>9.在/etc/ld.so.conf配置python库的路径；<br><code>vim /etc/ld.so.conf.d/python3.conf</code></p>

@@ -57,13 +57,13 @@
   };
 </script>
 
-  <meta name="description" content="用户及文件权限管理用户管理 查看用户123who am i 或者 who mom likes   如果查看当前用户的用户名whoami即可who命令其他常用参数| 参数    | 说明 || —— | —— ||-a    |打印能打印的全部||-d    |打印死掉的进程||-m    |同am i,mom likes||-q    |打印当前登录用户数及用户名||-u    |打印当前登录用户">
+  <meta name="description" content="用户及文件权限管理用户管理">
 <meta name="keywords" content="Linu学习之路">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux(一）--用户管理">
 <meta property="og:url" content="https://qinghongzhang.github.io./2019/12/07/Linux-一）-用户管理/index.html">
 <meta property="og:site_name" content="P.J小博客">
-<meta property="og:description" content="用户及文件权限管理用户管理 查看用户123who am i 或者 who mom likes   如果查看当前用户的用户名whoami即可who命令其他常用参数| 参数    | 说明 || —— | —— ||-a    |打印能打印的全部||-d    |打印死掉的进程||-m    |同am i,mom likes||-q    |打印当前登录用户数及用户名||-u    |打印当前登录用户">
+<meta property="og:description" content="用户及文件权限管理用户管理">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://qinghongzhang.github.io./2019/12/07/Linux-一）-用户管理/images/1575841184135.png">
 <meta property="og:image" content="https://qinghongzhang.github.io./2019/12/07/Linux-一）-用户管理/images/1575841227215.png">
@@ -77,7 +77,7 @@
 <meta property="og:updated_time" content="2019-12-08T22:14:12.579Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux(一）--用户管理">
-<meta name="twitter:description" content="用户及文件权限管理用户管理 查看用户123who am i 或者 who mom likes   如果查看当前用户的用户名whoami即可who命令其他常用参数| 参数    | 说明 || —— | —— ||-a    |打印能打印的全部||-d    |打印死掉的进程||-m    |同am i,mom likes||-q    |打印当前登录用户数及用户名||-u    |打印当前登录用户">
+<meta name="twitter:description" content="用户及文件权限管理用户管理">
 <meta name="twitter:image" content="https://qinghongzhang.github.io./2019/12/07/Linux-一）-用户管理/images/1575841184135.png">
   <link rel="canonical" href="https://qinghongzhang.github.io./2019/12/07/Linux-一）-用户管理/">
 
@@ -370,12 +370,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="用户及文件权限管理"><a href="#用户及文件权限管理" class="headerlink" title="用户及文件权限管理"></a>用户及文件权限管理</h1><h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><ol>
+        <h1 id="用户及文件权限管理"><a href="#用户及文件权限管理" class="headerlink" title="用户及文件权限管理"></a>用户及文件权限管理</h1><h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><a id="more"></a><ol>
 <li>查看用户<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">who am i </span><br><span class="line">或者 </span><br><span class="line">who mom likes</span><br></pre></td></tr></table></figure>
 
 </li>
-</ol><p>如果查看当前用户的用户名<code>whoami</code>即可<br><code>who</code>命令其他常用参数<br>| 参数    | 说明 |<br>| —— | —— |<br>|-a    |打印能打印的全部|<br>|-d    |打印死掉的进程|<br>|-m    |同am i,mom likes|<br>|-q    |打印当前登录用户数及用户名|<br>|-u    |打印当前登录用户登录信息|<br>|-r    |打印运行等级|<br>2. 创建用户<br>Linux系统中root用户拥有整个系统至高无上的权力，比如 新建/添加 用户<br>如果你是在root状态下可以直接创建用户，那如果是一般用户在命令前必须加 <code>sudo</code>才能创建，它会暂时给你root权限<br><code>su &lt;user&gt;</code> 可以切换到用户 user，执行时需要输入目标用户的密码，sudo <cmd> 可以以特权级别运行 cmd 命令，需要当前用户属于 sudo 组，且需要输入当前用户的密码。<code>su - &lt;user&gt;</code> 命令也是切换用户，同时环境变量也会跟着改变成目标用户的环境变量。    </cmd></p><a id="more"></a>
-
+</ol>
+<p>如果查看当前用户的用户名<code>whoami</code>即可<br><code>who</code>命令其他常用参数<br>| 参数    | 说明 |<br>| —— | —— |<br>|-a    |打印能打印的全部|<br>|-d    |打印死掉的进程|<br>|-m    |同am i,mom likes|<br>|-q    |打印当前登录用户数及用户名|<br>|-u    |打印当前登录用户登录信息|<br>|-r    |打印运行等级|<br>2. 创建用户<br>Linux系统中root用户拥有整个系统至高无上的权力，比如 新建/添加 用户<br>如果你是在root状态下可以直接创建用户，那如果是一般用户在命令前必须加 <code>sudo</code>才能创建，它会暂时给你root权限<br><code>su &lt;user&gt;</code> 可以切换到用户 user，执行时需要输入目标用户的密码，sudo <cmd> 可以以特权级别运行 cmd 命令，需要当前用户属于 sudo 组，且需要输入当前用户的密码。<code>su - &lt;user&gt;</code> 命令也是切换用户，同时环境变量也会跟着改变成目标用户的环境变量。    </cmd></p>
 <ul>
 <li><p>新建用户<br><code>sudo adduser username</code>如果是root可以不加sudo  </p>
 </li>
